@@ -1,0 +1,50 @@
+{
+    "$schema": "https://orix-ui.vercel.app/schema/registry.json",
+    "name": "orix",
+    "homepage": "https://orix.com",
+    "items": [
+        {
+            "name": "button",
+            "type": "registry:ui",
+            "title": "Button",
+            "description": "A premium button component with inner border effects.",
+            "files": [
+                {
+                    "path": "registry/orix-default/ui/button.tsx",
+                    "type": "registry:ui"
+                }
+            ]
+        },
+        {
+            "name": "floating-icons",
+            "type": "registry:block",
+            "title": "Floating Icons",
+            "description": "An animated background with floating technology icons.",
+            "files": [
+                {
+                    "path": "registry/orix-defaultk/block/floating-icons.tsx",
+                    "type": "registry:block"
+                }
+            ],
+            "dependencies": [
+                "@iconify/react"
+            ]
+        },
+        {
+            "name": "theme-toggle",
+            "type": "registry:ui",
+            "title": "Theme Toggle",
+            "description": "An animated light/dark mode switch using View Transitions API.",
+            "files": [
+                {
+                    "path": "registry/orix-default/ui/theme-toggle.tsx",
+                    "type": "registry:ui"
+                }
+            ],
+            "dependencies": [
+                "lucide-react",
+                "next-themes"
+            ]
+        }
+    ]
+}

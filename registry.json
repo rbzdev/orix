@@ -1,0 +1,667 @@
+{
+    "$schema": "https://orix-ui.vercel.app/schema/registry.json",
+    "name": "orix",
+    "homepage": "https://orix.com",
+    "items": [
+        {
+            "name": "button",
+            "type": "registry:ui",
+            "title": "Button",
+            "description": "A premium button component with inner border effects.",
+            "files": [
+                {
+                    "path": "registry/orix-default/ui/button.tsx",
+                    "type": "registry:ui"
+                }
+            ]
+        },
+        {
+            "name": "floating-icons",
+            "type": "registry:block",
+            "title": "Floating Icons",
+            "description": "An animated background with floating technology icons.",
+            "files": [
+                {
+                    "path": "registry/orix-default/block/floating-icons.tsx",
+                    "type": "registry:block"
+                }
+            ],
+            "dependencies": [
+                "@iconify/react"
+            ]
+        },
+        {
+            "name": "theme-toggle",
+            "type": "registry:ui",
+            "title": "Theme Toggle",
+            "description": "An animated light/dark mode switch using View Transitions API.",
+            "files": [
+                {
+                    "path": "registry/orix-default/ui/theme-toggle.tsx",
+                    "type": "registry:ui"
+                }
+            ],
+            "dependencies": [
+                "lucide-react",
+                "next-themes"
+            ]
+        },
+        {
+            "name": "magnetic-button",
+            "type": "registry:ui",
+            "title": "Magnetic Button",
+            "description": "A button that attracts the cursor with a smooth spring effect.",
+            "files": [
+                {
+                    "path": "registry/orix-default/ui/magnetic-button.tsx",
+                    "type": "registry:ui"
+                }
+            ],
+            "dependencies": [
+                "framer-motion"
+            ]
+        },
+        {
+            "name": "velocity-scroll",
+            "type": "registry:block",
+            "title": "Velocity Scroll",
+            "description": "Infinite horizontal scroll that reacts to scroll velocity.",
+            "files": [
+                {
+                    "path": "registry/orix-default/block/velocity-scroll.tsx",
+                    "type": "registry:block"
+                }
+            ],
+            "dependencies": [
+                "framer-motion"
+            ]
+        },
+        {
+            "name": "gooey-button",
+            "type": "registry:ui",
+            "title": "Gooey Button",
+            "description": "A button with a liquid gooey effect using SVG filters.",
+            "files": [
+                {
+                    "path": "registry/orix-default/ui/gooey-button.tsx",
+                    "type": "registry:ui"
+                }
+            ]
+        },
+        {
+            "name": "letter-pull-button",
+            "type": "registry:ui",
+            "title": "Letter Pull Button",
+            "description": "A button where letters pull apart on hover.",
+            "files": [
+                {
+                    "path": "registry/orix-default/ui/letter-pull-button.tsx",
+                    "type": "registry:ui"
+                }
+            ],
+            "dependencies": [
+                "framer-motion"
+            ]
+        },
+        {
+            "name": "interactive-grid",
+            "type": "registry:block",
+            "title": "Interactive Grid",
+            "description": "A responsive grid background that reacts to mouse movement.",
+            "files": [
+                {
+                    "path": "registry/orix-default/block/interactive-grid.tsx",
+                    "type": "registry:block"
+                }
+            ],
+            "dependencies": [
+                "framer-motion"
+            ]
+        },
+        {
+            "name": "spotlight-card",
+            "type": "registry:ui",
+            "title": "Spotlight Card",
+            "description": "A card component with an interactive spotlight following the mouse.",
+            "files": [
+                {
+                    "path": "registry/orix-default/ui/spotlight-card.tsx",
+                    "type": "registry:ui"
+                }
+            ],
+            "dependencies": [
+                "framer-motion"
+            ]
+        },
+        {
+            "name": "glitch-text",
+            "type": "registry:ui",
+            "title": "Glitch Text",
+            "description": "Text component with a high-fidelity RGB glitch animation.",
+            "files": [
+                {
+                    "path": "registry/orix-default/ui/glitch-text.tsx",
+                    "type": "registry:ui"
+                }
+            ],
+            "dependencies": [
+                "framer-motion"
+            ]
+        },
+        {
+            "name": "terminal",
+            "type": "registry:block",
+            "title": "Terminal",
+            "description": "A terminal simulation block with typing animations and command output.",
+            "files": [
+                {
+                    "path": "registry/orix-default/block/terminal.tsx",
+                    "type": "registry:block"
+                }
+            ],
+            "dependencies": [
+                "framer-motion"
+            ]
+        },
+        {
+            "name": "warp-button",
+            "type": "registry:ui",
+            "title": "Warp Button",
+            "description": "A button with a spatial warp/ripple effect on click.",
+            "files": [
+                {
+                    "path": "registry/orix-default/ui/warp-button.tsx",
+                    "type": "registry:ui"
+                }
+            ],
+            "dependencies": [
+                "framer-motion"
+            ]
+        },
+        {
+            "name": "scan-button",
+            "type": "registry:ui",
+            "title": "Scan Button",
+            "description": "A tech-style button with a scanning laser animation.",
+            "files": [
+                {
+                    "path": "registry/orix-default/ui/scan-button.tsx",
+                    "type": "registry:ui"
+                }
+            ],
+            "dependencies": [
+                "framer-motion"
+            ]
+        },
+        {
+            "name": "hero-bento",
+            "type": "registry:block",
+            "title": "Hero Bento",
+            "description": "A modern, high-fidelity grid system for hero sections.",
+            "files": [
+                {
+                    "path": "registry/orix-default/block/hero-bento.tsx",
+                    "type": "registry:block"
+                }
+            ],
+            "dependencies": [
+                "framer-motion",
+                "status-badge",
+                "@iconify/react"
+            ]
+        },
+        {
+            "name": "tilt-card",
+            "type": "registry:ui",
+            "title": "Tilt Card",
+            "description": "An interactive 3D card that tilts on mouse hover.",
+            "files": [
+                {
+                    "path": "registry/orix-default/ui/tilt-card.tsx",
+                    "type": "registry:ui"
+                }
+            ],
+            "dependencies": [
+                "framer-motion"
+            ]
+        },
+        {
+            "name": "neon-button",
+            "type": "registry:ui",
+            "title": "Neon Button",
+            "description": "A button with a tracing neon light border effect.",
+            "files": [
+                {
+                    "path": "registry/orix-default/ui/neon-button.tsx",
+                    "type": "registry:ui"
+                }
+            ],
+            "dependencies": [
+                "framer-motion"
+            ]
+        },
+        {
+            "name": "magnetic-text",
+            "type": "registry:ui",
+            "title": "Magnetic Text",
+            "description": "Text that subtly pulls toward the mouse cursor.",
+            "files": [
+                {
+                    "path": "registry/orix-default/ui/magnetic-text.tsx",
+                    "type": "registry:ui"
+                }
+            ],
+            "dependencies": [
+                "framer-motion"
+            ]
+        },
+        {
+            "name": "noise-card",
+            "type": "registry:ui",
+            "title": "Noise Card",
+            "description": "A card with a fractal noise grain overlay.",
+            "files": [
+                {
+                    "path": "registry/orix-default/ui/noise-card.tsx",
+                    "type": "registry:ui"
+                }
+            ]
+        },
+        {
+            "name": "glass-card",
+            "type": "registry:ui",
+            "title": "Glass Card",
+            "description": "A premium frosted glass card with light reflections.",
+            "files": [
+                {
+                    "path": "registry/orix-default/ui/glass-card.tsx",
+                    "type": "registry:ui"
+                }
+            ]
+        },
+        {
+            "name": "shimmer-button",
+            "type": "registry:ui",
+            "title": "Shimmer Button",
+            "description": "A button with a moving shimmer light ray effect.",
+            "files": [
+                {
+                    "path": "registry/orix-default/ui/shimmer-button.tsx",
+                    "type": "registry:ui"
+                }
+            ],
+            "dependencies": [
+                "framer-motion"
+            ]
+        },
+        {
+            "name": "pricing-section",
+            "type": "registry:block",
+            "title": "Pricing Section",
+            "description": "A premium pricing table with tiered plans and features.",
+            "files": [
+                {
+                    "path": "registry/orix-default/block/pricing-section.tsx",
+                    "type": "registry:block"
+                }
+            ],
+            "dependencies": [
+                "framer-motion",
+                "@iconify/react",
+                "ShimmerButton"
+            ]
+        },
+        {
+            "name": "testimonials-section",
+            "type": "registry:block",
+            "title": "Testimonials Section",
+            "description": "A section displaying customer feedback with user avatars.",
+            "files": [
+                {
+                    "path": "registry/orix-default/block/testimonials-section.tsx",
+                    "type": "registry:block"
+                }
+            ],
+            "dependencies": [
+                "framer-motion"
+            ]
+        },
+        {
+            "name": "faq-section",
+            "type": "registry:block",
+            "title": "FAQ Section",
+            "description": "An interactive accordion for frequently asked questions.",
+            "files": [
+                {
+                    "path": "registry/orix-default/block/faq-section.tsx",
+                    "type": "registry:block"
+                }
+            ],
+            "dependencies": [
+                "framer-motion"
+            ]
+        },
+        {
+            "name": "number-ticker",
+            "type": "registry:ui",
+            "title": "Number Ticker",
+            "description": "An animated number counter for statistics and achievements.",
+            "files": [
+                {
+                    "path": "registry/orix-default/ui/number-ticker.tsx",
+                    "type": "registry:ui"
+                }
+            ],
+            "dependencies": [
+                "framer-motion"
+            ]
+        },
+        {
+            "name": "copy-input",
+            "type": "registry:ui",
+            "title": "Copy Input",
+            "description": "A text input with an integrated copy button and feedback.",
+            "files": [
+                {
+                    "path": "registry/orix-default/ui/copy-input.tsx",
+                    "type": "registry:ui"
+                }
+            ],
+            "dependencies": []
+        },
+        {
+            "name": "status-badge",
+            "type": "registry:ui",
+            "title": "Status Badge",
+            "description": "A badge with a pulsing dot to indicate live or system status.",
+            "files": [
+                {
+                    "path": "registry/orix-default/ui/status-badge.tsx",
+                    "type": "registry:ui"
+                }
+            ]
+        },
+        {
+            "name": "skeleton",
+            "type": "registry:ui",
+            "title": "Skeleton",
+            "description": "A placeholder component with a shimmer animation for loading states.",
+            "files": [
+                {
+                    "path": "registry/orix-default/ui/skeleton.tsx",
+                    "type": "registry:ui"
+                }
+            ]
+        },
+        {
+            "name": "dropdown-menu",
+            "type": "registry:ui",
+            "title": "Dropdown Menu",
+            "description": "A premium animated dropdown menu with spring physics and glassmorphism.",
+            "files": [
+                {
+                    "path": "registry/orix-default/ui/dropdown-menu.tsx",
+                    "type": "registry:ui"
+                }
+            ],
+            "dependencies": [
+                "framer-motion",
+                "@iconify/react"
+            ]
+        },
+        {
+            "name": "checkbox",
+            "type": "registry:ui",
+            "title": "Checkbox",
+            "description": "A high-fidelity checkbox with multiple animation variants and sizes.",
+            "files": [
+                {
+                    "path": "registry/orix-default/ui/checkbox.tsx",
+                    "type": "registry:ui"
+                }
+            ],
+            "dependencies": [
+                "framer-motion"
+            ]
+        },
+        {
+            "name": "switch",
+            "type": "registry:ui",
+            "title": "Switch",
+            "description": "A premium toggle switch with spring physics and tactile feedback animations.",
+            "files": [
+                {
+                    "path": "registry/orix-default/ui/switch.tsx",
+                    "type": "registry:ui"
+                }
+            ],
+            "dependencies": [
+                "framer-motion"
+            ]
+        },
+        {
+            "name": "radial-gauge",
+            "type": "registry:ui",
+            "title": "Radial Gauge",
+            "description": "A sophisticated circular progress gauge with glow effects and data visualization.",
+            "files": [
+                {
+                    "path": "registry/orix-default/ui/radial-gauge.tsx",
+                    "type": "registry:ui"
+                }
+            ],
+            "dependencies": [
+                "framer-motion"
+            ]
+        },
+        {
+            "name": "expandable-dock",
+            "type": "registry:ui",
+            "title": "Expandable Dock",
+            "description": "A macOS-inspired dock with magnification effect and glassmorphism.",
+            "files": [
+                {
+                    "path": "registry/orix-default/ui/expandable-dock.tsx",
+                    "type": "registry:ui"
+                }
+            ],
+            "dependencies": [
+                "framer-motion",
+                "@iconify/react"
+            ]
+        },
+        {
+            "name": "interactive-stack",
+            "type": "registry:ui",
+            "title": "Interactive Stack",
+            "description": "A pile of cards that fan out on hover with spring physics.",
+            "files": [
+                {
+                    "path": "registry/orix-default/ui/interactive-stack.tsx",
+                    "type": "registry:ui"
+                }
+            ],
+            "dependencies": [
+                "framer-motion"
+            ]
+        },
+        {
+            "name": "infinite-marquee",
+            "type": "registry:block",
+            "title": "Infinite Marquee",
+            "description": "A seamless looping marquee for logos or tech stacks.",
+            "files": [
+                {
+                    "path": "registry/orix-default/block/infinite-marquee.tsx",
+                    "type": "registry:block"
+                }
+            ],
+            "dependencies": [
+                "framer-motion",
+                "@iconify/react"
+            ]
+        },
+        {
+            "name": "feature-modern",
+            "type": "registry:block",
+            "title": "Modern Feature Showcase",
+            "description": "A high-end feature presentation block with scroll-triggered animations.",
+            "files": [
+                {
+                    "path": "registry/orix-default/block/feature-modern.tsx",
+                    "type": "registry:block"
+                }
+            ],
+            "dependencies": [
+                "framer-motion",
+                "@iconify/react"
+            ]
+        },
+        {
+            "name": "input",
+            "type": "registry:ui",
+            "title": "Input",
+            "description": "A premium input field with inner depth shadows and focus animations.",
+            "files": [
+                {
+                    "path": "registry/orix-default/ui/input.tsx",
+                    "type": "registry:ui"
+                }
+            ],
+            "dependencies": []
+        },
+        {
+            "name": "dialog",
+            "type": "registry:ui",
+            "title": "Dialog",
+            "description": "A premium modal dialog with high-fidelity animations and depth styling.",
+            "files": [
+                {
+                    "path": "registry/orix-default/ui/dialog.tsx",
+                    "type": "registry:ui"
+                }
+            ],
+            "dependencies": [
+                "@radix-ui/react-dialog",
+                "clsx",
+                "tailwind-merge"
+            ]
+        },
+        {
+            "name": "interactive-lines",
+            "type": "registry:block",
+            "title": "Interactive Lines",
+            "description": "A scanning grid of lines that glow and reveal based on mouse position.",
+            "files": [
+                {
+                    "path": "registry/orix-default/block/interactive-lines.tsx",
+                    "type": "registry:block"
+                }
+            ],
+            "dependencies": [
+                "framer-motion"
+            ]
+        },
+        {
+            "name": "liquid-aura",
+            "type": "registry:block",
+            "title": "Liquid Aura",
+            "description": "Blurred atmospheric orbs that follow the mouse with liquid parallax.",
+            "files": [
+                {
+                    "path": "registry/orix-default/block/liquid-aura.tsx",
+                    "type": "registry:block"
+                }
+            ],
+            "dependencies": [
+                "framer-motion"
+            ]
+        },
+        {
+            "name": "particle-vortex",
+            "type": "registry:block",
+            "title": "Particle Vortex",
+            "description": "SVG particles that gravitationally react to mouse movement.",
+            "files": [
+                {
+                    "path": "registry/orix-default/block/particle-vortex.tsx",
+                    "type": "registry:block"
+                }
+            ],
+            "dependencies": [
+                "framer-motion"
+            ]
+        },
+        {
+            "name": "magnetic-surface",
+            "type": "registry:block",
+            "title": "Magnetic Surface",
+            "description": "A grid of elements that rotate to face the mouse with vector mapping.",
+            "files": [
+                {
+                    "path": "registry/orix-default/block/magnetic-surface.tsx",
+                    "type": "registry:block"
+                }
+            ],
+            "dependencies": [
+                "framer-motion"
+            ]
+        },
+        {
+            "name": "noise-mesh",
+            "type": "registry:block",
+            "title": "Noise Mesh",
+            "description": "A generative mesh system reacting to gravitational mouse distortion.",
+            "files": [
+                {
+                    "path": "registry/orix-default/block/noise-mesh.tsx",
+                    "type": "registry:block"
+                }
+            ],
+            "dependencies": [
+                "framer-motion"
+            ]
+        },
+        {
+            "name": "floating-constellation",
+            "type": "registry:block",
+            "title": "Floating Constellation",
+            "description": "SVG points that connect and react to mouse movements with neural-net logic.",
+            "files": [
+                {
+                    "path": "registry/orix-default/block/floating-constellation.tsx",
+                    "type": "registry:block"
+                }
+            ],
+            "dependencies": [
+                "framer-motion"
+            ]
+        },
+        {
+            "name": "carousel",
+            "type": "registry:block",
+            "title": "Carousel",
+            "description": "A high-fidelity slider with 3D variants, built with pure Tailwind CSS.",
+            "files": [
+                {
+                    "path": "registry/orix-default/block/carousel.tsx",
+                    "type": "registry:block"
+                }
+            ],
+            "dependencies": []
+        },
+        {
+            "name": "tabs",
+            "type": "registry:ui",
+            "title": "Tabs",
+            "description": "Highly animated navigation tabs with multiple visual variants.",
+            "files": [
+                {
+                    "path": "registry/orix-default/ui/tabs.tsx",
+                    "type": "registry:ui"
+                }
+            ],
+            "dependencies": []
+        }
+    ]
+}

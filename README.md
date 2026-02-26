@@ -1,36 +1,74 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Orix — The Future of Premium UI Components 🚀
 
-## Getting Started
+Orix is a modern, open-source component registry designed for developers who value **aesthetic excellence** and **high-fidelity performance**. Built on top of [shadcn/ui](https://ui.shadcn.com/), Orix provides a collection of sophisticated UI components and blocks that go beyond basic layouts.
 
-First, run the development server:
+---
+
+## ✨ Our Mission
+
+Orix aims to bridge the gap between "Open Source" and "Premium Design." We provide components with:
+- **Refined Micro-animations**: Handcrafted transitions using Tailwind CSS 4 and native CSS.
+- **Modern Standards**: Leveraging the View Transitions API for seamless navigation.
+- **Total Ownership**: You own the code. Copy, paste, and customize it to your project’s identity.
+
+---
+
+## ⚡ Quick Start
+
+You can install any component directly into your project using the `shadcn` CLI. 
+
+### Install a Component
+```bash
+npx shadcn@latest add https://orix-ui.vercel.app/r/[component-name].json
+```
+*(Replace `[component-name]` with the name of the component, e.g., `carousel`, `tabs`, `button`)*
+
+---
+
+## ☕ Support the Vision
+
+If you like what we're building and want to see more Orix components, consider supporting the project!
+
+- **Star on GitHub**: Help us grow and reach more developers by giving us a ⭐.
+- **Buy Me a Coffee**: [Support our work directly with a coffee](https://www.buymeacoffee.com/your-username). ☕☕️
+- **GitHub Sponsors**: [Become a monthly sponsor](https://github.com/sponsors/your-username) and get early access to new blocks. 💖
+- **Corporate Sponsorship**: Reach us at `your-email@example.com` for official site partnerships.
+
+---
+
+## 🤝 Contributing
+
+Orix is an open-source project and we welcome all contributors. Whether you want to fix a bug, improve documentation, or suggest new components, your help is appreciated.
+
+**See our [Full Contributing Guide](CONTRIBUTING.md) for more details.**
+
+### Quick Steps to contribute:
+1.  **Develop**: Build your component in the `components/` directory.
+2.  **Register**: Copy the source to `registry/orix-default/` and add the metadata to `registry.json`.
+3.  **Build**: Run `pnpm registry:build` to generate the registry files.
+4.  **Submit**: Open a Pull Request with your changes.
+
+### 🗺️ Future Roadmap
+As we evolve, we plan to introduce a professional marketplace layer that will allow high-quality contributors to offer **Paid Components** alongside our free open-source collection.
+
+---
+
+## 🛠️ Local Development
+
+If you'd like to explore the registry locally or test new components:
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
+# Clone the repository
+git clone https://github.com/your-username/orix.git
+
+# Install dependencies
+pnpm install
+
+# Run the development server
 pnpm dev
-# or
-bun dev
 ```
+Open [http://localhost:3000](http://localhost:3000) to see the live documentation.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+---
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+License: [MIT](LICENSE)
