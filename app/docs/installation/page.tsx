@@ -1,6 +1,12 @@
 import { CodeBlock } from "@/components/docs/code-block"
+import { CodeBlockClient } from "@/components/docs/code-block-client"
+import { InstallTabs } from "@/components/docs/install-tabs"
+import { getComponentCode } from "@/lib/registry"
 
-export default function InstallationPage() {
+export default async function InstallationPage() {
+
+    const buttonCode = (await getComponentCode("button")) || undefined
+
     return (
         <div className="space-y-10">
             <div className="space-y-4">
@@ -17,12 +23,9 @@ export default function InstallationPage() {
                     Prerequisites
                 </h2>
                 <p className="leading-7">
-                    Orix is designed to work with <span className="font-semibold">Next.js,React 19, and Tailwind CSS 4. </span> You should also have `shadcn` initialized in your project.
+                    Orix is designed to work with <span className="font-semibold">Next.js, React 19, and Tailwind CSS 4.</span> You should also have `shadcn` initialized in your project.
                 </p>
-                <CodeBlock
-                    code="npx shadcn@latest init"
-                    lang="bash"
-                />
+                <CodeBlockClient code="npx shadcn@latest init" lang="bash" />
             </div>
 
             <div className="space-y-6">
@@ -47,10 +50,7 @@ export default function InstallationPage() {
                         Run the command
                     </h4>
                     <p className="text-sm text-muted-foreground pl-8 italic">Example for the Button component:</p>
-                    <CodeBlock
-                        code="npx shadcn@latest add https://orix-ui.vercel.app/r/button.json"
-                        lang="bash"
-                    />
+                    <InstallTabs slug="button" code={buttonCode} />
                 </div>
             </div>
         </div>

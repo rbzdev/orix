@@ -662,6 +662,97 @@
                 }
             ],
             "dependencies": []
+        },
+        {
+            "name": "text-scramble",
+            "type": "registry:ui",
+            "title": "Text Scramble",
+            "description": "Hacker-style text deciphering animation on hover or mount.",
+            "files": [
+                {
+                    "path": "registry/orix-default/ui/text-scramble.tsx",
+                    "type": "registry:ui"
+                }
+            ],
+            "dependencies": []
+        },
+        {
+            "name": "border-beam",
+            "type": "registry:ui",
+            "title": "Border Beam",
+            "description": "An animated light beam running along the border of an element.",
+            "files": [
+                {
+                    "path": "registry/orix-default/ui/border-beam.tsx",
+                    "type": "registry:ui"
+                }
+            ],
+            "dependencies": []
+        },
+        {
+            "name": "flip-words",
+            "type": "registry:ui",
+            "title": "Flip Words",
+            "description": "3D spinning text that flips through words.",
+            "files": [
+                {
+                    "path": "registry/orix-default/ui/flip-words.tsx",
+                    "type": "registry:ui"
+                }
+            ],
+            "dependencies": []
+        },
+        {
+            "name": "blur-fade",
+            "type": "registry:ui",
+            "title": "Blur Fade",
+            "description": "Fades and un-blurs text or components on scroll.",
+            "files": [
+                {
+                    "path": "registry/orix-default/ui/blur-fade.tsx",
+                    "type": "registry:ui"
+                }
+            ],
+            "dependencies": []
+        },
+        {
+            "name": "tooltip",
+            "type": "registry:ui",
+            "title": "Tooltip",
+            "description": "Premium animated tooltip with multiple placement and variant options.",
+            "files": [
+                {
+                    "path": "registry/orix-default/ui/tooltip.tsx",
+                    "type": "registry:ui"
+                }
+            ],
+            "dependencies": []
+        },
+        {
+            "name": "progress-ring",
+            "type": "registry:ui",
+            "title": "Progress Ring",
+            "description": "Animated SVG circular progress indicator with gradient and glow variants.",
+            "files": [
+                {
+                    "path": "registry/orix-default/ui/progress-ring.tsx",
+                    "type": "registry:ui"
+                }
+            ],
+            "dependencies": []
+        },
+        {
+            "name": "typewriter",
+            "type": "registry:ui",
+            "title": "Typewriter",
+            "description": "Animated typewriter effect that cycles through a list of words with a blinking cursor.",
+            "files": [
+                {
+                    "path": "registry/orix-default/ui/typewriter.tsx",
+                    "type": "registry:ui"
+                }
+            ],
+            "dependencies": []
         }
     ]
 }

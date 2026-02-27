@@ -1,7 +1,8 @@
 import { notFound } from "next/navigation"
 import { ComponentPreview } from "@/components/docs/component-preview"
 import { CodeBlock } from "@/components/docs/code-block"
-import { getAutoRegistry } from "@/lib/registry"
+import { InstallTabs } from "@/components/docs/install-tabs"
+import { getAutoRegistry, getComponentCode } from "@/lib/registry"
 import { componentsMetadata } from "@/registry/metadata"
 
 export default async function ComponentPage({
@@ -17,12 +18,12 @@ export default async function ComponentPage({
         notFound()
     }
 
+    const code = (await getComponentCode(slug)) || undefined
+
     const metadata = componentsMetadata[slug] || {
         usage: `import { ${item.title.replace(/\s+/g, '')} } from "@/components/..." \n\n // No usage example yet`,
         props: []
     }
-
-    const installation = `npx shadcn@latest add https://orix-ui.vercel.app/r/${slug}.json`
 
     return (
         <div className="space-y-12">
@@ -46,7 +47,12 @@ export default async function ComponentPage({
                 <h2 className="scroll-m-20 border-b pb-2 text-3xl font-semibold tracking-tight">
                     Installation
                 </h2>
-                <CodeBlock code={installation} lang="bash" />
+                <InstallTabs
+                    slug={slug}
+                    code={code}
+                    dependencies={item.dependencies}
+                    targetPath={item.targetPath}
+                />
             </div>
 
             <div className="space-y-6">

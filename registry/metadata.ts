@@ -833,5 +833,168 @@ export default function Demo() {
       { name: "variant", type: "enum", values: ["pills", "underline", "floating", "kinetic"], default: "pills" },
       { name: "defaultValue", type: "string" }
     ]
+  },
+
+  // ==========================================
+  // TEXT SCRAMBLE
+  // ==========================================
+  "text-scramble": {
+    usage: `import { TextScramble } from "@/components/ui/text-scramble"
+
+export default function Demo() {
+  return (
+    <h1 className="text-4xl font-bold">
+      <TextScramble text="SYSTEM INITIALIZATION" duration={1200} />
+    </h1>
+  )
+}`,
+    props: [
+      { name: "text", type: "string" },
+      { name: "duration", type: "number", default: "800" },
+      { name: "trigger", type: "boolean", default: "true" }
+    ]
+  },
+
+  // ==========================================
+  // BORDER BEAM
+  // ==========================================
+  "border-beam": {
+    usage: `import { BorderBeam } from "@/components/ui/border-beam"
+
+export default function Demo() {
+  return (
+    <div className="relative w-full max-w-sm p-4 rounded-xl border bg-black text-white">
+      <BorderBeam />
+      <h3 className="text-lg font-bold">Magic Card </h3>
+    </div>
+  )
+}`,
+    props: [
+      { name: "size", type: "number", default: "200" },
+      { name: "duration", type: "number", default: "8" },
+      { name: "borderWidth", type: "number", default: "2" },
+      { name: "colorFrom", type: "string", default: "#ffaa40" },
+      { name: "colorTo", type: "string", default: "#9c40ff" }
+    ]
+  },
+
+  // ==========================================
+  // FLIP WORDS
+  // ==========================================
+  "flip-words": {
+    usage: `import { FlipWords } from "@/components/ui/flip-words"
+
+export default function Demo() {
+  return (
+    <div className="text-4xl font-bold text-black dark:text-white">
+      Build
+      <FlipWords words={["better", "faster", "beautiful", "modern"]} />
+      websites
+    </div>
+  )
+}`,
+    props: [
+      { name: "words", type: "string[]" },
+      { name: "duration", type: "number", default: "2000" }
+    ]
+  },
+
+  // ==========================================
+  // BLUR FADE
+  // ==========================================
+  "blur-fade": {
+    usage: `import { BlurFade } from "@/components/ui/blur-fade"
+
+export default function Demo() {
+  return (
+    <BlurFade delay={0.25} inView>
+      <h2 className="text-3xl font-bold tracking-tighter">
+        Hello World
+      </h2>
+    </BlurFade>
+  )
+}`,
+    props: [
+      { name: "delay", type: "number", default: "0" },
+      { name: "duration", type: "number", default: "0.5" },
+      { name: "inView", type: "boolean", default: "false" },
+      { name: "blur", type: "string", default: "8px" }
+    ]
+  },
+
+  // ==========================================
+  // TOOLTIP
+  // ==========================================
+  "tooltip": {
+    usage: `import { Tooltip } from "@/components/ui/tooltip"
+import { Button } from "@/components/ui/button"
+
+export default function Demo() {
+  return (
+    <Tooltip content="This is a tooltip!" side="top" variant="dark">
+      <Button variant="outline">Hover Me</Button>
+    </Tooltip>
+  )
+}`,
+    props: [
+      { name: "content", type: "ReactNode" },
+      { name: "side", type: "enum", values: ["top", "bottom", "left", "right"], default: "top" },
+      { name: "variant", type: "enum", values: ["dark", "light", "glass", "primary"], default: "dark" },
+      { name: "delay", type: "number", default: "100" }
+    ]
+  },
+
+  // ==========================================
+  // PROGRESS RING
+  // ==========================================
+  "progress-ring": {
+    usage: `import { ProgressRing } from "@/components/ui/progress-ring"
+
+export default function Demo() {
+  return (
+    <div className="flex gap-8">
+      <ProgressRing value={72} label="CPU" variant="glow" />
+      <ProgressRing value={48} label="Memory" variant="gradient" color="#ec4899" />
+    </div>
+  )
+}`,
+    props: [
+      { name: "value", type: "number" },
+      { name: "max", type: "number", default: "100" },
+      { name: "size", type: "number", default: "120" },
+      { name: "strokeWidth", type: "number", default: "10" },
+      { name: "color", type: "string" },
+      { name: "label", type: "string" },
+      { name: "showValue", type: "boolean", default: "true" },
+      { name: "variant", type: "enum", values: ["default", "gradient", "glow"], default: "default" }
+    ]
+  },
+
+  // ==========================================
+  // TYPEWRITER
+  // ==========================================
+  "typewriter": {
+    usage: `import { Typewriter } from "@/components/ui/typewriter"
+
+export default function Demo() {
+  return (
+    <h2 className="text-4xl font-bold">
+      Build{" "}
+      <Typewriter
+        words={["fast.", "beautiful.", "modern.", "with Orix."]}
+        typingSpeed={80}
+        className="text-primary"
+      />
+    </h2>
+  )
+}`,
+    props: [
+      { name: "words", type: "string[]" },
+      { name: "typingSpeed", type: "number", default: "80" },
+      { name: "deletingSpeed", type: "number", default: "40" },
+      { name: "pauseDuration", type: "number", default: "1800" },
+      { name: "cursorChar", type: "string", default: "|" },
+      { name: "loop", type: "boolean", default: "true" }
+    ]
   }
 }

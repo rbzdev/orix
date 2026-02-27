@@ -25,7 +25,7 @@ export default function DocsPage() {
                 <h2 className="scroll-m-20 border-b pb-2 text-3xl font-semibold tracking-tight">
                     Evolution
                 </h2>
-                <p className="leading-7 underline decoration-primary underline-offset-4 font-medium">
+                <p className="leading-7 underline decoration-primary/20 underline-offset-4 font-medium">
                     Note: We are constantly updating our registry. Soon, we will allow selected contributors to offer paid components in addition to our open-source collection.
                 </p>
             </div>

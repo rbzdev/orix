@@ -12,7 +12,10 @@ import { GooeyButton } from "@/registry/orix-default/ui/gooey-button"
 import { LetterPullButton } from "@/registry/orix-default/ui/letter-pull-button"
 import { InteractiveGrid } from "@/registry/orix-default/block/interactive-grid"
 import { SpotlightCard } from "@/registry/orix-default/ui/spotlight-card"
-import { GlitchText } from "@/registry/orix-default/ui/glitch-text"
+import { TextScramble } from "@/registry/orix-default/ui/text-scramble"
+import { BorderBeam } from "@/registry/orix-default/ui/border-beam"
+import { FlipWords } from "@/registry/orix-default/ui/flip-words"
+import { BlurFade } from "@/registry/orix-default/ui/blur-fade"
 import { Terminal } from "@/registry/orix-default/block/terminal"
 import { WarpButton } from "@/registry/orix-default/ui/warp-button"
 import { ScanButton } from "@/registry/orix-default/ui/scan-button"
@@ -62,6 +65,11 @@ import { NoiseMesh } from "@/registry/orix-default/block/noise-mesh"
 import { FloatingConstellation } from "@/registry/orix-default/block/floating-constellation"
 import { Carousel } from "@/registry/orix-default/block/carousel"
 import { Tabs } from "@/registry/orix-default/ui/tabs"
+
+// New 4 components
+import { Tooltip } from "@/registry/orix-default/ui/tooltip"
+import { ProgressRing } from "@/registry/orix-default/ui/progress-ring"
+import { Typewriter } from "@/registry/orix-default/ui/typewriter"
 
 interface ComponentPreviewProps {
     name: string
@@ -250,12 +258,6 @@ export function ComponentPreview({ name, className }: ComponentPreviewProps) {
                         </SpotlightCard>
                     </div>
                 )
-            case "glitch-text":
-                return (
-                    <div className="flex items-center justify-center p-20 w-full bg-black rounded-xl border border-zinc-800">
-                        <GlitchText text="DECODING..." className="text-6xl tracking-tighter text-white" />
-                    </div>
-                )
             case "terminal":
                 return (
                     <div className="w-full p-6">
@@ -304,7 +306,7 @@ export function ComponentPreview({ name, className }: ComponentPreviewProps) {
             case "magnetic-text":
                 return (
                     <div className="flex items-center justify-center p-20 w-full">
-                        <h2 className="text-6xl tracking-tighter">
+                        <h2 className="text-6xl tracking-tighter font-black">
                             <MagneticText className="text-primary italic">Hover Me</MagneticText>, Orix IS HERE
                         </h2>
                     </div>
@@ -782,6 +784,121 @@ export function ComponentPreview({ name, className }: ComponentPreviewProps) {
                 return <TestimonialsSection />
             case "faq-section":
                 return <FaqSection />
+            case "tooltip":
+                return (
+                    <div className="flex flex-col items-center gap-16 p-20 w-full">
+                        <div className="flex flex-wrap items-center justify-center gap-10">
+                            {(["top", "bottom", "left", "right"] as const).map((side) => (
+                                <Tooltip key={side} content={`Side: ${side}`} side={side} variant={selectedVariant || "dark"}>
+                                    <button className="px-5 py-2.5 rounded-xl border bg-muted text-sm font-medium hover:bg-muted/80 transition-colors capitalize">
+                                        {side}
+                                    </button>
+                                </Tooltip>
+                            ))}
+                        </div>
+                        <div className="flex flex-wrap gap-3 justify-center">
+                            {["dark", "light", "glass", "primary"].map((v) => (
+                                <button
+                                    key={v}
+                                    onClick={() => setSelectedVariant(v)}
+                                    className={cn(
+                                        "px-4 py-2 text-xs rounded-xl border transition-all capitalize",
+                                        selectedVariant === v ? "bg-primary text-primary-foreground border-primary" : "bg-muted hover:bg-muted/80"
+                                    )}
+                                >
+                                    {v}
+                                </button>
+                            ))}
+                        </div>
+                    </div>
+                )
+            case "text-scramble":
+                return (
+                    <div className="flex flex-col items-center justify-center p-20 w-full bg-zinc-950 text-white rounded-xl">
+                        <TextScramble text="ACCESS GRANTED" className="text-3xl tracking-widest text-[#10b981]" trigger={true} />
+                        <p className="mt-4 text-xs text-zinc-500 max-w-[250px] text-center">
+                            Hover over the text below to trigger manually:
+                        </p>
+                        <TextScramble text="HOVER_TO_DECRYPT" className="mt-2 text-sm text-zinc-300 cursor-crosshair border border-dashed border-zinc-700 px-4 py-2" trigger={false} />
+                    </div>
+                )
+            case "border-beam":
+                return (
+                    <div className="flex flex-col items-center justify-center p-20 w-full dark:bg-black rounded-xl gap-16">
+                        <div className="relative flex h-[200px] w-full max-w-[300px] flex-col items-center justify-center overflow-hidden rounded-2xl bg-white dark:bg-zinc-950 shadow-sm border border-black/5 dark:border-white/10">
+                            <span className="pointer-events-none whitespace-pre-wrap bg-linear-to-b from-black to-zinc-400/80 bg-clip-text text-center text-5xl font-semibold leading-none text-transparent dark:from-white dark:to-zinc-200/50">
+                                MAGIC
+                            </span>
+                            <BorderBeam size={200} duration={8} delay={0} colorFrom="#10b981" colorTo="#3b82f6" variant={selectedVariant || "default"} />
+                        </div>
+
+                        <div className="flex flex-wrap gap-3 justify-center">
+                            {["default", "reverse", "flash"].map((v) => (
+                                <button
+                                    key={v}
+                                    onClick={() => setSelectedVariant(v)}
+                                    className={cn(
+                                        "px-4 py-2 text-xs rounded-xl border transition-all capitalize",
+                                        selectedVariant === v ? "bg-primary text-primary-foreground border-primary" : "bg-muted hover:bg-muted/80"
+                                    )}
+                                >
+                                    {v}
+                                </button>
+                            ))}
+                        </div>
+                    </div>
+                )
+            case "flip-words":
+                return (
+                    <div className="flex items-center justify-center p-20 w-full">
+                        <h2 className="text-5xl font-black text-center leading-tight">
+                            Build <br />
+                            <FlipWords words={["beautiful", "modern", "scalable", "lightning fast"]} className="text-primary italic px-0" /> <br />
+                            interfaces with Orix
+                        </h2>
+                    </div>
+                )
+            case "blur-fade":
+                return (
+                    <div className="flex flex-col items-center justify-center gap-6 p-20 w-full">
+                        <BlurFade delay={0} inView={true}>
+                            <h2 className="text-4xl font-bold tracking-tighter">Welcome to the future.</h2>
+                        </BlurFade>
+                        <BlurFade delay={0.2} inView={true}>
+                            <p className="text-muted-foreground text-center">Seamlessly animate elements as they enter the viewport</p>
+                        </BlurFade>
+                        <BlurFade delay={0.4} inView={true}>
+                            <Button className="mt-4 rounded-xl px-8 h-12 shadow-xl shadow-primary/20">Get Started</Button>
+                        </BlurFade>
+                    </div>
+                )
+            case "progress-ring":
+                return (
+                    <div className="flex flex-col items-center gap-12 p-16 w-full">
+                        <div className="flex flex-wrap items-end justify-center gap-10">
+                            <ProgressRing value={72} label="CPU" variant="glow" color="hsl(var(--primary))" size={140} strokeWidth={12} />
+                            <ProgressRing value={48} label="Memory" variant="gradient" color="#ec4899" size={120} />
+                            <ProgressRing value={91} label="Storage" variant="default" color="#f59e0b" size={100} strokeWidth={8} />
+                            <ProgressRing value={33} label="Network" variant="glow" color="#10b981" size={90} strokeWidth={8} />
+                        </div>
+                    </div>
+                )
+            case "typewriter":
+                return (
+                    <div className="flex items-center justify-center p-20 w-full">
+                        <div className="text-center space-y-6">
+                            <p className="text-xs uppercase tracking-widest text-muted-foreground">Orix is built for</p>
+                            <h2 className="text-5xl font-black">
+                                <Typewriter
+                                    words={["speed.", "beauty.", "accessibility.", "your next idea."]}
+                                    className="text-primary"
+                                    typingSpeed={70}
+                                    pauseDuration={2000}
+                                />
+                            </h2>
+                        </div>
+                    </div>
+                )
             default:
                 return <div className="p-10 text-center text-muted-foreground">Component not found</div>
         }

@@ -100,7 +100,7 @@ export function Navbar({
               className="relative px-4 py-2 text-sm font-medium text-zinc-600 transition-colors hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-white group"
             >
               {item.label}
-              <span className="absolute inset-x-2 -bottom-px h-px scale-x-0 bg-gradient-to-r from-transparent via-primary to-transparent transition-transform duration-300 group-hover:scale-x-100" />
+              <span className="absolute inset-x-2 -bottom-px h-px scale-x-0 bg-linear-to-r from-transparent via-primary to-transparent transition-transform duration-300 group-hover:scale-x-100" />
             </Link>
           ))}
         </div>

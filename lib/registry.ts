@@ -7,6 +7,8 @@ export interface RegistryItem {
     title: string
     description?: string
     dependencies?: string[]
+    targetPath?: string
+    files?: { path: string, type: string }[]
 }
 
 export async function getRegistry() {
@@ -39,7 +41,8 @@ export async function getAutoRegistry() {
                         type,
                         title: existing?.title || name.split("-").map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(" "),
                         description: existing?.description || `Description for ${name}`,
-                        dependencies: existing?.dependencies || []
+                        dependencies: existing?.dependencies || [],
+                        targetPath: existing?.files?.[0]?.path || `registry/orix-default/${type === "registry:ui" ? "ui" : "block"}/${f}`
                     }
                 })
         } catch (e) {
@@ -56,4 +59,21 @@ export async function getAutoRegistry() {
 export async function getRegistryByType(type: "registry:ui" | "registry:block") {
     const items = await getAutoRegistry()
     return items.filter((item) => item.type === type)
+}
+
+export async function getComponentCode(slug: string) {
+    try {
+        const registryPath = path.join(process.cwd(), "registry.json")
+        const file = await fs.readFile(registryPath, "utf8")
+        const data = JSON.parse(file)
+
+        const item = data.items.find((i: any) => i.name === slug)
+        if (!item || !item.files || item.files.length === 0) return null
+
+        const filePath = path.join(process.cwd(), item.files[0].path)
+        return await fs.readFile(filePath, "utf8")
+    } catch (e) {
+        console.error("Error reading component code:", e)
+        return null
+    }
 }
