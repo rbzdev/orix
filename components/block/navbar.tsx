@@ -120,14 +120,17 @@ export function Navbar({
             />
           </div>
 
-          <Button
-            variant="default"
-            size="sm"
-            className="hidden sm:inline-flex rounded-full px-5 font-semibold shadow-indigo-500/20"
-          >
-            Get Started
-            <Icon icon="guidance:left-arrow" className="h-4 w-4 transition-transform group-hover:translate-x-1" />
-          </Button>
+          <Link href="/docs">
+
+            <Button
+              variant="default"
+              size="sm"
+              className="hidden sm:inline-flex rounded-full px-5 font-semibold shadow-indigo-500/20"
+            >
+              Get Started
+              <Icon icon="guidance:left-arrow" className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+            </Button>
+          </Link>
 
           {/* Mobile Menu Toggle */}
           <button
@@ -206,9 +209,11 @@ export function Navbar({
                 <Github className="h-5 w-5 text-zinc-600 dark:text-zinc-400" />
               </Link>
             </div>
-            <Button className="w-full">
-              Get Started
-            </Button>
+            <Link href="/docs">
+              <Button className="w-full">
+                Get Started
+              </Button>
+            </Link>
           </div>
         </div>
       </div>
