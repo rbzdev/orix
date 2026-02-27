@@ -48,7 +48,7 @@ export default async function DocsLayout({
                         </Link>
                         <nav className="flex items-center space-x-6 text-sm font-medium ml-4">
                             <Link href="/docs" className="transition-colors hover:text-primary text-foreground/60">Docs</Link>
-                            <Link href="https://github.com/your-username/orix" className="transition-colors hover:text-primary text-foreground/60">GitHub</Link>
+                            <Link href="https://github.com/rbzdev/orix" className="transition-colors hover:text-primary text-foreground/60">GitHub</Link>
                         </nav>
                     </div>
                     <ThemeToggle />

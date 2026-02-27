@@ -4,6 +4,7 @@ import { Sparkles } from "lucide-react"
 import { cn } from "@/lib/utils"
 import { FloatingIcons } from "@/components/block/floating-icons"
 import { Button } from "../ui/button"
+import { Icon } from "@iconify/react"
 
 interface Header01Props {
   badge?: string
@@ -73,21 +74,7 @@ export function Header({
               className="rounded-full group"
             >
               Explore blocks
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="16"
-                height="16"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                className="ml-2 transition-transform group-hover:translate-x-1"
-              >
-                <path d="M5 12h14" />
-                <path d="m12 5 7 7-7 7" />
-              </svg>
+              <Icon icon={"guidance:left-arrow"} className="group-hover:translate-x-2 transition-all" />
             </Button>
 
           </Link>

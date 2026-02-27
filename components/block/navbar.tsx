@@ -3,130 +3,139 @@
 import * as React from "react"
 import { useState, useEffect } from "react"
 import Link from "next/link"
-import { Menu, X, } from "lucide-react";
+import { Menu, X, Github, ChevronRight } from "lucide-react";
 import { Icon } from "@iconify/react";
 
 import { ThemeToggle } from "@/components/theme-toggle"
 import { Button } from "@/components/ui/button"
 import { cn } from "@/lib/utils"
+import Image from "next/image";
 
 interface NavItem {
   label: string
   href: string
-  isExternal?: boolean
+  description?: string
+  icon?: string
 }
 
-interface Navbar01Props {
-  logo?: React.ReactNode
+interface NavbarProps {
   items?: NavItem[]
   className?: string
 }
 
 const defaultItems: NavItem[] = [
-  { label: "Blocks", href: "/blocks" },
-  { label: "Components", href: "/components" },
-  { label: "Documentation", href: "/docs" },
+
+  {
+    label: "Documentation",
+    href: "/docs",
+    description: "Learn how to use Orix",
+    icon: "fluent:code-block-48-regular"
+  },
+  {
+    label: "Blocks",
+    href: "/blocks",
+    description: "Premium pre-built UI sections",
+    icon: "proicons:component"
+  },
+  {
+    label: "Components",
+    href: "/components",
+    description: "Atomic UI building blocks",
+    icon: "basil:box-outline"
+  },
 ]
 
 export function Navbar({
-  logo,
   items = defaultItems,
   className,
-}: Navbar01Props) {
+}: NavbarProps) {
   const [isOpen, setIsOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
 
-  // Handle scroll effect
   useEffect(() => {
     const handleScroll = () => {
-      setScrolled(window.scrollY > 20)
+      setScrolled(window.scrollY > 10)
     }
     window.addEventListener("scroll", handleScroll)
     return () => window.removeEventListener("scroll", handleScroll)
   }, [])
 
+  // Prevent scroll when menu is open
+  useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflow = "hidden"
+    } else {
+      document.body.style.overflow = "unset"
+    }
+  }, [isOpen])
 
   return (
     <nav
       className={cn(
-        "fixed top-0 left-0 right-0 z-50 transition-all duration-300 ease-in-out",
-        scrolled
-          ? "top-4 px-4 py-0"
-          : "top-0 px-0 py-0",
+        "fixed inset-x-0 top-0 z-50 transition-all duration-500 ease-in-out",
+        scrolled ? "top-4 px-4" : "top-0 px-0",
         className
       )}
     >
       <div
         className={cn(
-          "mx-auto flex h-16 items-center justify-between transition-all duration-300 px-4 sm:px-6 lg:px-8",
+          "mx-auto flex h-16 items-center justify-between transition-all duration-500 px-4 sm:px-6",
           scrolled
-            ? "max-w-5xl rounded-2xl border border-white/10 bg-white/70 shadow-2xl backdrop-blur-xl dark:bg-black/70"
-            : "max-w-7xl  border-border/40 bg-background/0"
+            ? "max-w-5xl rounded-2xl border border-white/10 bg-white/60 shadow-[0_8px_32px_rgba(0,0,0,0.12)] backdrop-blur-xl dark:bg-black/60 dark:shadow-[0_8px_32px_rgba(0,0,0,0.4)]"
+            : "max-w-7xl border-transparent bg-transparent"
         )}
       >
         {/* Logo Section */}
-        <Link href="/" className="flex items-center gap-2 group">
-          {logo ?? (
-            <div className="flex items-center gap-1">
-              <div className="relative flex h-9 w-9 items-center justify-center overflow-hidden rounded-xl bg-primary shadow-lg transition-transform group-hover:scale-110 active:scale-95">
-                <div className="absolute inset-0 bg-linear-to-tr from-white/20 to-transparent" />
-                <span className="relative text-sm font-black text-primary-foreground tracking-tighter">
-                  orx
-                </span>
-              </div>
-              <span className="hidden text-xl font-bold tracking-tight text-foreground sm:block">
-                orix
-              </span>
-            </div>
-          )}
+        <Link href="/" className="flex items-center gap- group">
+          <Image src="/logo_min.png" alt="orix-logo" height={40} width={40} className="bg-primary dark:bg-transparent rounded-lg p-1" />
+          <h1 className="text-xl"> orix-UI</h1>
         </Link>
 
-        {/* Desktop Navigation (Center) */}
+        {/* Desktop Navigation */}
         <div className="hidden absolute left-1/2 -translate-x-1/2 items-center gap-1 md:flex">
           {items.map((item) => (
             <Link
               key={item.href}
               href={item.href}
-              className="relative px-4 py-2 text-sm font-medium text-muted-foreground transition-all hover:text-foreground group"
+              className="relative px-4 py-2 text-sm font-medium text-zinc-600 transition-colors hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-white group"
             >
               {item.label}
-              <span className="absolute inset-x-4 -bottom-1 h-px scale-x-0 bg-primary transition-transform duration-300 group-hover:scale-x-100" />
+              <span className="absolute inset-x-2 -bottom-px h-px scale-x-0 bg-gradient-to-r from-transparent via-primary to-transparent transition-transform duration-300 group-hover:scale-x-100" />
             </Link>
           ))}
         </div>
 
         {/* Right Actions */}
-        <div className="flex items-center gap-3">
-          <div className="hidden items-center gap-2 sm:flex">
+        <div className="flex items-center gap-2 relative z-50">
+          <div className="hidden items-center gap-1 sm:flex mr-2">
             <Link
-              href="https://github.com/rubuz/safaridew"
+              href="https://github.com/rbzdev"
               target="_blank"
-              className="flex h-9 w-9 items-center justify-center rounded-lg text-muted-foreground transition-colors hover:bg-accent hover:text-foreground"
+              className="group flex h-9 w-9 items-center justify-center rounded-lg transition-all hover:bg-zinc-100 dark:hover:bg-zinc-800"
             >
-              <Icon icon="line-md:github" className="h-5 w-5" />
+              <Github className="h-5 w-5 text-zinc-600 transition-colors group-hover:text-zinc-900 dark:text-zinc-400 dark:group-hover:text-white" />
             </Link>
             <ThemeToggle
-              // animation="morph"
-              origin="button"
-              duration={500}
-              className="flex h-9 w-9 items-center justify-center rounded-lg text-muted-foreground transition-colors hover:bg-accent hover:text-foreground"
+              className="flex h-9 w-9 items-center justify-center rounded-lg transition-all hover:bg-zinc-100 dark:hover:bg-zinc-800"
             />
-
           </div>
 
           <Button
-            // size="sm"
-            // variant="ghost"
-            className=" group"
+            variant="default"
+            size="sm"
+            className="hidden sm:inline-flex rounded-full px-5 font-semibold shadow-indigo-500/20"
           >
             Get Started
             <Icon icon="guidance:left-arrow" className="h-4 w-4 transition-transform group-hover:translate-x-1" />
           </Button>
 
-          {/* Mobile Menu Button */}
+          {/* Mobile Menu Toggle */}
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className="flex h-10 w-10 items-center justify-center rounded-xl border border-border/50 bg-accent/30 text-muted-foreground transition-all hover:bg-accent hover:text-foreground md:hidden"
+            className={cn(
+              "flex h-10 w-10 items-center justify-center rounded-xl border border-zinc-200 bg-white/50 text-zinc-600 transition-all active:scale-90 dark:border-zinc-800 dark:bg-black/50 dark:text-zinc-400 md:hidden",
+              isOpen && "dark:bg-primary/10"
+            )}
             aria-label="Toggle menu"
           >
             {isOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
@@ -134,37 +143,75 @@ export function Navbar({
         </div>
       </div>
 
-      {/* Mobile Navigation Dropdown */}
+      {/* Mobile Menu Overlay */}
       <div
         className={cn(
-          "absolute inset-x-4 top-20 overflow-hidden rounded-2xl border border-white/10 bg-white/90 p-2 shadow-2xl backdrop-blur-2xl transition-all duration-500 ease-in-out dark:bg-black/90 md:hidden",
-          isOpen ? "translate-y-0 opacity-100 max-h-[400px]" : "-translate-y-4 opacity-0 max-h-0 pointer-events-none"
+          "fixed inset-0 z-40 bg-zinc-950/20 backdrop-blur-xs transition-opacity duration-300 md:hidden",
+          isOpen ? "opacity-100" : "opacity-0 pointer-events-none"
+        )}
+        onClick={() => setIsOpen(false)}
+      />
+
+      {/* Mobile Menu Panel */}
+      <div
+        className={cn(
+          "fixed inset-x-4 top-20 z-50 overflow-hidden rounded-3xl border border-white/10 bg-white/95 p-6 shadow-2xl transition-all duration-500 ease-[cubic-bezier(0.32,0.72,0,1)] dark:bg-zinc-900/95 md:hidden",
+          isOpen
+            ? "translate-y-0 opacity-100 scale-100"
+            : "-translate-y-8 opacity-0 scale-95 pointer-events-none"
         )}
       >
-        <div className="flex flex-col gap-1 p-2">
-          {items.map((item, i) => (
-            <Link
-              key={item.href}
-              href={item.href}
-              onClick={() => setIsOpen(false)}
-              style={{ transitionDelay: `${i * 50}ms` }}
-              className={cn(
-                "flex items-center justify-between rounded-xl px-4 py-3 text-base font-semibold transition-all hover:bg-primary/10 hover:text-primary",
-                isOpen ? "translate-x-0 opacity-100" : "-translate-x-4 opacity-0"
-              )}
-            >
-              {item.label}
-              <Icon icon="guidance:left-arrow" className="h-4 w-4 transition-transform group-hover:translate-x-1" />
-            </Link>
-          ))}
-          <div className="mt-4 flex items-center justify-between border-t border-border/50 pt-4 px-2">
-            <ThemeToggle animation="circle" />
-            <Button className="w-full ml-4 rounded-xl">Join Community</Button>
+        <div className="flex flex-col gap-6">
+          <div className="flex flex-col gap-2">
+            <p className="text-[10px] font-bold uppercase tracking-widest text-zinc-400 dark:text-zinc-500 px-2">
+              Menu
+            </p>
+            <div className="grid gap-2">
+              {items.map((item, i) => (
+                <Link
+                  key={item.href}
+                  href={item.href}
+                  onClick={() => setIsOpen(false)}
+                  style={{ transitionDelay: `${i * 50}ms` }}
+                  className={cn(
+                    "group flex items-center justify-between rounded-2xl bg-zinc-50/50 p-4 transition-all hover:bg-indigo-50 dark:bg-white/5 dark:hover:bg-indigo-500/10",
+                    isOpen ? "translate-x-0 opacity-100" : "-translate-x-4 opacity-0"
+                  )}
+                >
+                  <div className="flex items-center gap-4">
+                    <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-white shadow-sm dark:bg-zinc-800">
+                      <Icon icon={item.icon || "solar:link-bold"} className="text-xl" />
+                    </div>
+                    <div className="flex flex-col">
+                      <span className="text-sm font-bold text-zinc-900 dark:text-zinc-100">{item.label}</span>
+                      <span className="text-xs text-zinc-500 dark:text-zinc-400">{item.description}</span>
+                    </div>
+                  </div>
+                  <ChevronRight className="h-4 w-4 text-zinc-400 transition-transform group-hover:translate-x-1" />
+                </Link>
+              ))}
+            </div>
+          </div>
+
+          <div className="flex flex-col gap-4 border-t border-zinc-100 pt-6 dark:border-zinc-800">
+            <div className="flex items-center justify-between px-">
+
+              <ThemeToggle className="scale-125" />
+
+
+              <Link
+                href="https://github.com/rbzdev"
+                className="flex h-10 w-10 items-center justify-center rounded-xl bg-zinc-50 dark:bg-white/5"
+              >
+                <Github className="h-5 w-5 text-zinc-600 dark:text-zinc-400" />
+              </Link>
+            </div>
+            <Button className="w-full">
+              Get Started
+            </Button>
           </div>
         </div>
       </div>
     </nav>
   )
 }
-
-

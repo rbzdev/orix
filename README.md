@@ -30,8 +30,8 @@ npx shadcn@latest add https://orix-ui.vercel.app/r/[component-name].json
 If you like what we're building and want to see more Orix components, consider supporting the project!
 
 - **Star on GitHub**: Help us grow and reach more developers by giving us a ⭐.
-- **Buy Me a Coffee**: [Support our work directly with a coffee](https://www.buymeacoffee.com/your-username). ☕☕️
-- **GitHub Sponsors**: [Become a monthly sponsor](https://github.com/sponsors/your-username) and get early access to new blocks. 💖
+- **Buy Me a Coffee**: [Support our work directly with a coffee](https://www.buymeacoffee.com/rbzdev). ☕☕️
+- **GitHub Sponsors**: [Become a monthly sponsor](https://github.com/sponsors/rbzdev) and get early access to new blocks. 💖
 - **Corporate Sponsorship**: Reach us at `your-email@example.com` for official site partnerships.
 
 ---
@@ -59,7 +59,7 @@ If you'd like to explore the registry locally or test new components:
 
 ```bash
 # Clone the repository
-git clone https://github.com/your-username/orix.git
+git clone https://github.com/rbzdev/orix.git
 
 # Install dependencies
 pnpm install

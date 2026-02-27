@@ -19,7 +19,7 @@ To get started, make sure you have [Node.js](https://nodejs.org/) (v18+) and [pn
 1.  **Fork the Repository**: Create your own copy of the Orix repo on GitHub.
 2.  **Clone Locally**:
     ```bash
-    git clone https://github.com/your-username/orix.git
+    git clone https://github.com/rbzdev
     cd orix
     ```
 3.  **Install Dependencies**:
