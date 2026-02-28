@@ -19,7 +19,7 @@ You can install any component directly into your project using the `shadcn` CLI.
 
 ### Install a Component
 ```bash
-npx shadcn@latest add https://orix-ui.vercel.app/r/[component-name].json
+npx shadcn@latest add https://orix-rbr2.vercel.app/r/[component-name].json
 ```
 *(Replace `[component-name]` with the name of the component, e.g., `carousel`, `tabs`, `button`)*
 
