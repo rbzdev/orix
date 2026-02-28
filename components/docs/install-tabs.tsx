@@ -29,7 +29,7 @@ export function InstallTabs({ slug, command, code, dependencies = [], targetPath
     const [activeTab, setActiveTab] = React.useState("pnpm")
 
     const getCommand = (pm: string) => {
-        const baseUrl = "https://orix-rbr2.vercel.app"
+        const baseUrl = "https://orix-three.vercel.app"
 
         if (slug) {
             switch (pm) {

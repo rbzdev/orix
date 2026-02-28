@@ -7,6 +7,6 @@ export default function robots(): MetadataRoute.Robots {
             allow: "/",
             disallow: "/account/",
         },
-        sitemap: "https://orix-rbr2.vercel.app/sitemap.xml",
+        sitemap: "https://orix-three.vercel.app/sitemap.xml",
     };
 }

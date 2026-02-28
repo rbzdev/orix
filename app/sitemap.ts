@@ -2,7 +2,7 @@ import { MetadataRoute } from "next";
 
 export default function sitemap(): MetadataRoute.Sitemap {
     // Définissez ici les routes de l'application
-    const baseUrl = "https://orix-rbr2.vercel.app";
+    const baseUrl = "https://orix-three.vercel.app";
 
     return [
         {

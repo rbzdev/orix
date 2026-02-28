@@ -38,13 +38,13 @@ export const metadata: Metadata = {
     siteName: "Orix",
     images: [
       {
-        url: "https://orix-rbr2.vercel.app/logo.png",
+        url: "https://orix-three.vercel.app/logo.png",
         width: 1200,
         height: 630,
         alt: "Orix - The Next-Gen Component Registry",
       },
       {
-        url: "https://orix-rbr2.vercel.app/logo_min.png",
+        url: "https://orix-three.vercel.app/logo_min.png",
         width: 400,
         height: 400,
         alt: "Orix Logo",
@@ -55,13 +55,13 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Orix - The Next-Gen Component Library",
     description: "A lightning-fast, highly customizable component Library built entirely on top of shadcn/ui.",
-    images: ["https://orix-rbr2.vercel.app/logo.png"],
+    images: ["https://orix-three.vercel.app/logo.png"],
     creator: "@rubuz_",
   },
   icons: {
-    icon: "https://orix-rbr2.vercel.app/logo_min.png",
-    shortcut: "https://orix-rbr2.vercel.app/logo_min.png",
-    apple: "https://orix-rbr2.vercel.app/logo_min.png",
+    icon: "https://orix-three.vercel.app/logo_min.png",
+    shortcut: "https://orix-three.vercel.app/logo_min.png",
+    apple: "https://orix-three.vercel.app/logo_min.png",
   },
 };
 
@@ -75,7 +75,7 @@ export default function RootLayout({
     "@type": "WebSite",
     name: "Orix",
     description: "A lightning-fast, highly customizable component Library built entirely on top of shadcn/ui.",
-    url: "https://orix-rbr2.vercel.app",
+    url: "https://orix-three.vercel.app",
   };
 
   return (

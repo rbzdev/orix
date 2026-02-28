@@ -1,7 +1,7 @@
 {
-    "$schema": "https://orix-rbr2.vercel.app/schema/registry.json",
+    "$schema": "https://orix-three.vercel.app/schema/registry.json",
     "name": "orix",
-    "homepage": "https://orix-rbr2.vercel.app",
+    "homepage": "https://orix-three.vercel.app",
     "items": [
         {
             "name": "button",
