@@ -16,6 +16,7 @@ import { TextScramble } from "@/registry/orix-default/ui/text-scramble"
 import { BorderBeam } from "@/registry/orix-default/ui/border-beam"
 import { FlipWords } from "@/registry/orix-default/ui/flip-words"
 import { BlurFade } from "@/registry/orix-default/ui/blur-fade"
+import { Loader } from "@/registry/orix-default/ui/loader"
 import { Terminal } from "@/registry/orix-default/block/terminal"
 import { WarpButton } from "@/registry/orix-default/ui/warp-button"
 import { ScanButton } from "@/registry/orix-default/ui/scan-button"
@@ -27,6 +28,7 @@ import { NeonButton } from "@/registry/orix-default/ui/neon-button"
 import { MagneticText } from "@/registry/orix-default/ui/magnetic-text"
 import { NoiseCard } from "@/registry/orix-default/ui/noise-card"
 import { GlassCard } from "@/registry/orix-default/ui/glass-card"
+import { GlitchText } from "@/registry/orix-default/ui/glitch-text"
 import { ShimmerButton } from "@/registry/orix-default/ui/shimmer-button"
 
 // Essential UI Components
@@ -214,8 +216,27 @@ export function ComponentPreview({ name, className }: ComponentPreviewProps) {
                 )
             case "letter-pull-button":
                 return (
-                    <div className="flex items-center justify-center p-20 w-full">
-                        <LetterPullButton text="Hover Me" pullDistance={12} />
+                    <div className="flex flex-wrap items-center justify-center p-20 gap-16 w-full">
+                        <LetterPullButton
+                            text="Hover me"
+                            variant={"pull"}
+                            className="py-2 "
+                        />
+                        <LetterPullButton
+                            text="Waving text"
+                            variant={"wave"}
+                            className=" "
+                        />
+                        <LetterPullButton
+                            text="Flip me"
+                            variant={"flip"}
+                        />
+                        <LetterPullButton
+                            text="Hover to Jiggle"
+                            variant={"jiggle"}
+                            className=" "
+
+                        />
                     </div>
                 )
             case "warp-button":
@@ -324,7 +345,7 @@ export function ComponentPreview({ name, className }: ComponentPreviewProps) {
                 )
             case "glass-card":
                 return (
-                    <div className="relative flex items-center justify-center p-20 w-full min-h-[300px] rounded-xl overflow-hidden bg-[url('https://images.unsplash.com/photo-1771520719118-9a6fc6e04574?q=80&w=987&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')] bg-cover bg-center saturate-100 dark:saturate-0 min-h-[70vh]! ">
+                    <div className="relative flex items-center justify-center p-20 w-full rounded-xl overflow-hidden bg-[url('https://images.unsplash.com/photo-1771520719118-9a6fc6e04574?q=80&w=987&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')] bg-cover bg-center saturate-100 dark:saturate-0 min-h-[70vh]! ">
                         <div className="absolute inset-0 bg-black/20" />
                         <GlassCard className="max-w-sm" intensity="low">
                             <h3 className="text-white text-xl font-bold italic underline decoration-white/30 decoration-2 underline-offset-4">Frosted Glass</h3>
@@ -332,6 +353,12 @@ export function ComponentPreview({ name, className }: ComponentPreviewProps) {
                                 Beautifully blurred backgrounds that maintain context while providing focus.
                             </p>
                         </GlassCard>
+                    </div>
+                )
+            case "glitch-text":
+                return (
+                    <div className="flex items-center justify-center p-20 w-full bg-black ">
+                        <GlitchText text="TikTok" className="text-lg lg:text-8xl font-black text-white " />
                     </div>
                 )
             case "shimmer-button":
@@ -822,15 +849,32 @@ export function ComponentPreview({ name, className }: ComponentPreviewProps) {
                         <TextScramble text="HOVER_TO_DECRYPT" className="mt-2 text-sm text-zinc-300 cursor-crosshair border border-dashed border-zinc-700 px-4 py-2" trigger={false} />
                     </div>
                 )
+            case "loader":
+                return (
+                    <div className="flex flex-wrap items-center justify-evenly w-full min-h-76 gap-8 py-12">
+                        <Loader variant={"ring"} size="lg" />
+                        <Loader variant={"dots"} size="lg" />
+                        <Loader variant={"bars"} size="lg" />
+                        <Loader variant={"pulse"} size="lg" />
+                        <Loader variant={"spinner"} size="lg" />
+                        <Loader variant={"orbit"} size="lg" />
+                        <Loader variant={"wave"} size="lg" />
+                        <Loader variant={"bounce"} size="lg" />
+                        <Loader variant={"dash"} size="lg" />
+                    </div>
+                )
             case "border-beam":
                 return (
-                    <div className="flex flex-col items-center justify-center p-20 w-full dark:bg-black rounded-xl gap-16">
-                        <div className="relative flex h-[200px] w-full max-w-[300px] flex-col items-center justify-center overflow-hidden rounded-2xl bg-white dark:bg-zinc-950 shadow-sm border border-black/5 dark:border-white/10">
+                    <div className="flex flex-col items-center justify-center p-20 w-full dark:bg-black gap-16">
+                        <div className="relative  flex h-[300px] w-full max-w-[300px] flex-col items-center justify-center overflow-hidden rounded-5xl bg-white dark:bg-zinc-950 ">
+
                             <span className="pointer-events-none whitespace-pre-wrap bg-linear-to-b from-black to-zinc-400/80 bg-clip-text text-center text-5xl font-semibold leading-none text-transparent dark:from-white dark:to-zinc-200/50">
                                 MAGIC
                             </span>
-                            <BorderBeam size={200} duration={8} delay={0} colorFrom="#10b981" colorTo="#3b82f6" variant={selectedVariant || "default"} />
+                            <BorderBeam size={200} duration={8} delay={0} colorFrom="#6366f1" colorTo="#fcd34d" variant={selectedVariant || "default"} />
                         </div>
+
+
 
                         <div className="flex flex-wrap gap-3 justify-center">
                             {["default", "reverse", "flash"].map((v) => (

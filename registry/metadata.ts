@@ -129,11 +129,11 @@ export default function Demo() {
     usage: `import { LetterPullButton } from "@/components/ui/letter-pull-button"
 
 export default function Demo() {
-  return <LetterPullButton text="EXPLORE" pullDistance={15} />
+  return <LetterPullButton text="EXPLORE" variant="pull" />
 }`,
     props: [
       { name: "text", type: "string" },
-      { name: "pullDistance", type: "number", default: "10" }
+      { name: "variant", type: "enum", values: ["pull", "wave", "flip", "jiggle"], default: "pull" }
     ]
   },
 
@@ -995,6 +995,27 @@ export default function Demo() {
       { name: "pauseDuration", type: "number", default: "1800" },
       { name: "cursorChar", type: "string", default: "|" },
       { name: "loop", type: "boolean", default: "true" }
+    ]
+  },
+
+  // ==========================================
+  // LOADER
+  // ==========================================
+  "loader": {
+    usage: `import { Loader } from "@/components/ui/loader"
+
+export default function Demo() {
+  return (
+    <div className="flex gap-4">
+      <Loader variant="ring" size="md" />
+      <Loader variant="dots" size="md" />
+      <Loader variant="bars" size="md" />
+    </div>
+  )
+}`,
+    props: [
+      { name: "variant", type: "enum", values: ["ring", "dots", "bars", "pulse", "spinner", "orbit", "wave", "bounce", "dash"], default: "ring" },
+      { name: "size", type: "enum", values: ["sm", "md", "lg"], default: "md" }
     ]
   }
 }

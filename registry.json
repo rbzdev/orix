@@ -753,6 +753,19 @@
                 }
             ],
             "dependencies": []
+        },
+        {
+            "name": "loader",
+            "type": "registry:ui",
+            "title": "Loader",
+            "description": "Collection of loading spinners and animated indicators built with TailwindCSS.",
+            "files": [
+                {
+                    "path": "registry/orix-default/ui/loader.tsx",
+                    "type": "registry:ui"
+                }
+            ],
+            "dependencies": []
         }
     ]
 }
