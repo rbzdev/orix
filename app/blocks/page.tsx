@@ -14,7 +14,7 @@ export default async function BlocksPage() {
             <main className="pt-32 pb-20 px-6">
                 <div className="max-w-7xl mx-auto">
                     <div className="flex flex-col gap-4 mb-16">
-                        <h1 className="text-4xl md:text-6xl font-black tracking-tighter italic uppercase text-zinc-900 dark:text-white">
+                        <h1 className="text-4xl md:text-6xl tracking-tighter text-zinc-900 dark:text-white">
                             Premium <span className="text-primary">Blocks</span>
                         </h1>
                         <p className="text-muted-foreground text-lg max-w-2xl leading-relaxed">
@@ -45,7 +45,7 @@ export default async function BlocksPage() {
                                     </p>
                                     <div className="pt-4 flex flex-wrap gap-2">
                                         {block.dependencies?.slice(0, 3).map(dep => (
-                                            <span key={dep} className="px-2 py-1 rounded-md bg-zinc-100 dark:bg-zinc-800 text-[10px] font-mono text-zinc-500 uppercase tracking-tighter">
+                                            <span key={dep} className="px-2 py-1 rounded-md bg-zinc-100 dark:bg-zinc-800 text-[10px] font-mono text-zinc-500  tracking-tighter">
                                                 {dep.split('/').pop()}
                                             </span>
                                         ))}
