@@ -127,6 +127,8 @@ export function InstallTabs({ slug, command, code, dependencies = [], targetPath
                         <CopyButton
                             content={getCommand(activeTab)}
                             className="h-8 w-8 hover:bg-zinc-200 dark:hover:bg-zinc-800"
+                            componentName={slug}
+                            method="cli"
                         />
                     </div>
                     <div className="p-0">
@@ -139,7 +141,7 @@ export function InstallTabs({ slug, command, code, dependencies = [], targetPath
                     </div>
                 </div>
             ) : (
-                <div className="p-6 space-y-8 bg-zinc-200/30 dark:bg-zinc-900/50 rounded-xl border">
+                <div className="p-4 lg:p-6 space-y-8 bg-zinc-200/30 dark:bg-zinc-900/50 rounded-xl border">
                     {/* Step 1: Dependencies */}
                     {dependencies.length > 0 && (
                         <div className="space-y-4">
@@ -170,6 +172,8 @@ export function InstallTabs({ slug, command, code, dependencies = [], targetPath
                                     <CopyButton
                                         content={getDepInstallCommand(activeTab)}
                                         className="h-7 w-7"
+                                        componentName={slug}
+                                        method="manual"
                                     />
                                 </div>
                                 <div className="p-4 font-mono text-xs text-zinc-600 dark:text-zinc-400">
@@ -196,6 +200,8 @@ export function InstallTabs({ slug, command, code, dependencies = [], targetPath
                                 <CopyButton
                                     content={code || ""}
                                     className="h-7 w-7"
+                                    componentName={slug}
+                                    method="manual"
                                 />
                             </div>
 

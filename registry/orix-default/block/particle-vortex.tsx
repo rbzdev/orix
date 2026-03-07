@@ -45,7 +45,7 @@ export function ParticleVortex({
         <div
             onMouseMove={handleMouseMove}
             className={cn(
-                "relative w-full h-[500px] overflow-hidden bg-white dark:bg-zinc-950 flex items-center justify-center border rounded-3xl group transition-colors duration-500",
+                "relative w-full h-fit px-4 py-12 overflow-hidden bg-white dark:bg-zinc-950 flex items-center justify-center border rounded-3xl group transition-colors duration-500",
                 className
             )}
         >
@@ -61,13 +61,13 @@ export function ParticleVortex({
                 ))}
             </svg>
 
-            <div className="relative z-10 text-center">
+            <div className="relative z-10 text-center flex justify-center">
                 <motion.div
                     initial={{ opacity: 0, scale: 0.9 }}
                     whileInView={{ opacity: 1, scale: 1 }}
-                    className="p-12 bg-white/20 dark:bg-black/20 backdrop-blur-sm rounded-3xl border border-black/5 dark:border-white/5"
+                    className="p-6 bg-white/20 dark:bg-black/20 backdrop-blur-sm rounded-3xl border border-black/5 dark:border-white/5 w-fit "
                 >
-                    <h2 className="text-6xl font-black text-zinc-900 dark:text-white leading-none tracking-tighter uppercase italic">
+                    <h2 className="text-2xl lg:text-6xl font-black text-zinc-900 dark:text-white leading-none tracking-tighter uppercase italic">
                         {variant}<span className="text-primary">.</span>OS
                     </h2>
                     <p className="text-zinc-600 dark:text-zinc-400 mt-4 font-mono text-xs tracking-widest uppercase">

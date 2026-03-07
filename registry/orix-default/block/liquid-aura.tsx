@@ -3,6 +3,7 @@
 import * as React from "react"
 import { motion, useMotionValue, useSpring } from "framer-motion"
 import { cn } from "@/lib/utils"
+import { Button } from "../ui/button"
 
 type AuraVariant = "aurora" | "nebula" | "magma" | "ocean"
 
@@ -40,7 +41,7 @@ export function LiquidAura({ className, variant = "aurora" }: LiquidAuraProps) {
         <div
             onMouseMove={handleMouseMove}
             className={cn(
-                "relative w-full h-[500px] overflow-hidden bg-white dark:bg-zinc-950 flex items-center justify-center border rounded-3xl transition-colors duration-500",
+                "relative w-full h-fit px-2 py-32 overflow-hidden bg-white dark:bg-zinc-950 flex items-center justify-center border rounded-3xl transition-colors duration-500",
                 className
             )}
         >
@@ -64,17 +65,18 @@ export function LiquidAura({ className, variant = "aurora" }: LiquidAuraProps) {
 
             {/* Content Glass Card */}
             <div className="relative z-10 p-1 bg-black/5 dark:bg-white/5 backdrop-blur-3xl rounded-[2.5rem] border border-black/5 dark:border-white/10 shadow-2xl overflow-hidden group">
-                <div className="bg-white/90 dark:bg-zinc-900/90 p-10 rounded-[2.25rem] text-center border border-black/5 dark:border-white/5 space-y-4">
+                <div className="bg-white/90 dark:bg-zinc-900/90 p-4 lg:p-10 rounded-[2.25rem] text-center border border-black/5 dark:border-white/5 space-y-4">
                     <span className="text-[10px] font-black uppercase tracking-[0.3em] text-primary/60">{label}</span>
-                    <h3 className="text-4xl md:text-5xl font-black tracking-tighter leading-none italic text-zinc-900 dark:text-white">
+
+                    <h3 className="text-2xl md:text-5xl font-black tracking-tighter leading-none italic text-zinc-900 dark:text-white">
                         {variant.toUpperCase()}.MODE
                     </h3>
                     <p className="text-zinc-600 dark:text-zinc-400 text-sm max-w-[280px] mx-auto leading-relaxed">
                         A dynamic interface that breathes and reacts to your every movement.
                     </p>
-                    <button className="mt-6 px-8 py-3 bg-zinc-900 dark:bg-white text-white dark:text-zinc-900 font-bold rounded-2xl shadow-lg hover:scale-105 transition-transform active:scale-95">
+                    <Button className="mt-6 ">
                         Initialize Sync
-                    </button>
+                    </Button>
                 </div>
             </div>
 

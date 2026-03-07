@@ -19,7 +19,7 @@ export function NeonButton({
     return (
         <button
             className={cn(
-                "group relative px-8 py-3 rounded-full font-black tracking-widest uppercase transition-all duration-300 isolate",
+                "group relative px-8 py-3 rounded-full tracking-widest transition-all duration-300 isolate",
                 "bg-zinc-950 text-white border-2 border-transparent",
                 className
             )}

@@ -5,6 +5,9 @@ import "./globals.css";
 // Theme
 import { ThemeProvider } from "@/components/theme-provider";
 
+// Analytics
+import { GoogleAnalytics } from '@next/third-parties/google'
+
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
@@ -16,6 +19,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL(process.env.NEXT_PUBLIC_APP_URL || 'https://orix-three.vercel.app'),
   title: "Orix - The Next-Gen Component Library",
   description: "A lightning-fast, highly customizable component Library built entirely on top of shadcn/ui.",
   keywords: [
@@ -30,6 +34,7 @@ export const metadata: Metadata = {
   ],
   authors: [{ name: "Olivier Rubuz" }],
   creator: "Olivier Rubuz",
+
   openGraph: {
     type: "website",
     locale: "en_US",
@@ -38,15 +43,15 @@ export const metadata: Metadata = {
     siteName: "Orix",
     images: [
       {
-        url: "https://orix-three.vercel.app/logo.png",
-        width: 1200,
-        height: 630,
+        url: "/logo.png",
+        width: 1024,
+        height: 1024,
         alt: "Orix - The Next-Gen Component Registry",
       },
       {
-        url: "https://orix-three.vercel.app/logo_min.png",
-        width: 400,
-        height: 400,
+        url: "/logo_min.png",
+        width: 300,
+        height: 275,
         alt: "Orix Logo",
       }
     ],
@@ -55,15 +60,16 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Orix - The Next-Gen Component Library",
     description: "A lightning-fast, highly customizable component Library built entirely on top of shadcn/ui.",
-    images: ["https://orix-three.vercel.app/logo.png"],
+    images: ["/logo.png"],
     creator: "@rubuz_",
   },
   icons: {
-    icon: "https://orix-three.vercel.app/logo_min.png",
-    shortcut: "https://orix-three.vercel.app/logo_min.png",
-    apple: "https://orix-three.vercel.app/logo_min.png",
+    icon: "/logo_min.png",
+    shortcut: "/icon.ico",
+    apple: "/logo_min.png",
   },
 };
+
 
 export default function RootLayout({
   children,
@@ -81,10 +87,12 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
+
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
+
       </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
@@ -99,6 +107,8 @@ export default function RootLayout({
           {children}
         </ThemeProvider>
       </body>
+
+      <GoogleAnalytics gaId="G-JCTXK9E6MQ" />
     </html>
   );
 }

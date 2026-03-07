@@ -2,12 +2,29 @@
 
 import * as React from "react"
 import { cn } from "@/lib/utils"
+import { trackComponentCopy } from "@/lib/analytics";
 
-export function CopyButton({ content, className }: { content: string; className?: string }) {
+export function CopyButton({
+    content,
+    className,
+    componentName,
+    method = "manual"
+}: {
+    content: string;
+    className?: string;
+    componentName?: string;
+    method?: "cli" | "manual";
+}) {
     const [copied, setCopied] = React.useState(false)
 
     const copy = () => {
         navigator.clipboard.writeText(content)
+
+        // Track the copy event with Google Analytics
+        if (componentName) {
+            trackComponentCopy(componentName, method)
+        }
+
         setCopied(true)
         setTimeout(() => setCopied(false), 2000)
     }

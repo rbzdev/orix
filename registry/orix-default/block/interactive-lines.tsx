@@ -35,7 +35,7 @@ export function InteractiveLines({
         <div
             onMouseMove={handleMouseMove}
             className={cn(
-                "relative w-full h-[500px] overflow-hidden bg-white dark:bg-zinc-950 flex items-center justify-center border rounded-3xl group transition-colors duration-500",
+                "relative w-full h-fit p-2 overflow-hidden bg-white dark:bg-zinc-950 flex items-center justify-center border rounded-xl group transition-colors duration-500",
                 className
             )}
         >
@@ -64,7 +64,7 @@ export function InteractiveLines({
             />
 
             <div className="relative z-20 text-center space-y-4">
-                <h2 className="text-5xl font-black text-zinc-900 dark:text-white tracking-tighter uppercase italic">
+                <h2 className="text-2xl lg:text-5xl ">
                     {variant}<span className="text-primary">.</span>CORE
                 </h2>
                 <p className="text-zinc-500 dark:text-zinc-400 font-medium">System responsive interface initialized.</p>

@@ -48,6 +48,7 @@ import {
     DialogHeader,
     DialogTitle,
     DialogTrigger,
+    DialogClose,
 } from "@/registry/orix-default/ui/dialog"
 import { RadialGauge } from "@/registry/orix-default/ui/radial-gauge"
 import { ExpandableDock } from "@/registry/orix-default/ui/expandable-dock"
@@ -91,30 +92,30 @@ export function ComponentPreview({ name, className }: ComponentPreviewProps) {
         switch (name) {
             case "button":
                 return (
-                    <div className="flex flex-col items-center gap-8 p-10 w-full">
-                        <div className="flex flex-wrap items-center justify-center gap-4">
+                    <div className="flex flex-col items-center gap-8 lg:p-10 w-full">
+                        <div className="flex flex-wrap items-center justify-center gap-8">
                             <Button size={selectedSize}>
-                                Push Me
+                                {selectedSize === "icon" ? <Icon icon="solar:gallery-send-broken" /> : "Push Me"}
                             </Button>
 
                             <Button variant={"secondary"} size={selectedSize}>
-                                Push Me
+                                {selectedSize === "icon" ? <Icon icon="f7:bell" /> : "Secondary"}
                             </Button>
 
                             <Button variant={"outline"} size={selectedSize}>
-                                Push Me
+                                {selectedSize === "icon" ? <Icon icon="arcticons:openai-chatgpt" /> : "Outline"}
                             </Button>
 
                             <Button variant={"destructive"} size={selectedSize}>
-                                Push Me
+                                {selectedSize === "icon" ? <Icon icon="mynaui:trash" /> : "Destructive"}
                             </Button>
 
                             <Button variant={"ghost"} size={selectedSize}>
-                                Push Me
+                                {selectedSize === "icon" ? <Icon icon="fa7-brands:snapchat" /> : "Ghost"}
                             </Button>
 
                             <Button variant={"link"} size={selectedSize}>
-                                Push Me
+                                {selectedSize === "icon" ? <Icon icon="line-md:link" /> : "Link"}
                             </Button>
                         </div>
 
@@ -142,7 +143,7 @@ export function ComponentPreview({ name, className }: ComponentPreviewProps) {
                 )
             case "theme-toggle":
                 return (
-                    <div className="flex flex-col items-center gap-8 p-10 w-full">
+                    <div className="flex flex-col items-center gap-8 px-4 py-12 lg:p-10 w-full">
                         <div className="flex items-center justify-center p-8 scale-150">
                             <ThemeToggle animation={selectedAnimation} origin={selectedOrigin} />
                         </div>
@@ -202,7 +203,7 @@ export function ComponentPreview({ name, className }: ComponentPreviewProps) {
                 )
             case "gooey-button":
                 return (
-                    <div className="flex flex-col items-center gap-8 p-10 w-full">
+                    <div className="flex flex-col items-center gap-8 p-6 lg:p-10 w-full">
                         <div className="flex flex-wrap items-center justify-center gap-12">
                             <GooeyButton variant={"default"}>Hover me</GooeyButton>
 
@@ -216,7 +217,7 @@ export function ComponentPreview({ name, className }: ComponentPreviewProps) {
                 )
             case "letter-pull-button":
                 return (
-                    <div className="flex flex-wrap items-center justify-center p-20 gap-16 w-full">
+                    <div className="flex flex-wrap items-center justify-center px-4 py-12 lg:p-20 gap-16 w-full">
                         <LetterPullButton
                             text="Hover me"
                             variant={"pull"}
@@ -241,13 +242,13 @@ export function ComponentPreview({ name, className }: ComponentPreviewProps) {
                 )
             case "warp-button":
                 return (
-                    <div className="flex items-center justify-center p-20 w-full">
+                    <div className="flex items-center justify-center px-4 py-16 lgp-20 w-full">
                         <WarpButton>Trigger Warp</WarpButton>
                     </div>
                 )
             case "scan-button":
                 return (
-                    <div className="flex items-center justify-center p-20 w-full">
+                    <div className="flex items-center justify-center px-4 py-12 lg:p-20 w-full">
                         <ScanButton>Access Granted</ScanButton>
                     </div>
                 )
@@ -265,7 +266,7 @@ export function ComponentPreview({ name, className }: ComponentPreviewProps) {
                 )
             case "spotlight-card":
                 return (
-                    <div className="flex items-center justify-center p-12 w-full dark:bg-zinc-950 rounded-xl overflow-hidden">
+                    <div className="flex items-center justify-center px-4 py-12 lg:p-12 w-full dark:bg-zinc-950 rounded-xl overflow-hidden">
                         <SpotlightCard className="max-w-sm">
                             <h3 className="text-2xl tracking-tighter">ORIX PREMIUM</h3>
                             <p className="text-zinc-400 mt-2 text-sm leading-relaxed">
@@ -299,7 +300,7 @@ export function ComponentPreview({ name, className }: ComponentPreviewProps) {
                 )
             case "tilt-card":
                 return (
-                    <div className="flex items-center justify-center p-20 w-full bg-linear-to-br from-indigo-500/10 to-purple-500/10 overflow-hidden rounded-xl">
+                    <div className="flex items-center justify-center px-4 py-20 lg:p-20 w-full bg-linear-to-br from-indigo-500/10 to-purple-500/10 overflow-hidden rounded-xl">
                         <TiltCard className="max-w-xs">
                             <div className="space-y-4">
                                 <div className="h-12 w-12 rounded-2xl bg-primary/20 flex items-center justify-center">
@@ -313,7 +314,7 @@ export function ComponentPreview({ name, className }: ComponentPreviewProps) {
                 )
             case "neon-button":
                 return (
-                    <div className="flex flex-col items-center gap-12 p-12 w-full  rounded-2xl overflow-hidden border ">
+                    <div className="flex flex-col items-center gap-12 px-4 py-12 lg:p-12 w-full  rounded-2xl overflow-hidden border ">
                         <div className="flex flex-wrap items-center justify-center gap-8">
                             <NeonButton neonColor="gold">Yellow Pulse</NeonButton>
                             <NeonButton neonColor="#ec4899">Pink Vapor</NeonButton>
@@ -326,7 +327,7 @@ export function ComponentPreview({ name, className }: ComponentPreviewProps) {
                 )
             case "magnetic-text":
                 return (
-                    <div className="flex items-center justify-center p-20 w-full">
+                    <div className="flex items-center justify-center px-4 py-12 lg:p-20 w-full">
                         <h2 className="text-6xl tracking-tighter font-black">
                             <MagneticText className="text-primary italic">Hover Me</MagneticText>, Orix IS HERE
                         </h2>
@@ -334,7 +335,7 @@ export function ComponentPreview({ name, className }: ComponentPreviewProps) {
                 )
             case "noise-card":
                 return (
-                    <div className="flex items-center justify-center p-20 w-full">
+                    <div className="flex items-center justify-center px-4 py-12 lg:p-20 w-full" >
                         <NoiseCard className="max-w-sm">
                             <h3 className="text-xl font-bold">Grained Texture</h3>
                             <p className="text-sm text-muted-foreground mt-2">
@@ -345,9 +346,11 @@ export function ComponentPreview({ name, className }: ComponentPreviewProps) {
                 )
             case "glass-card":
                 return (
-                    <div className="relative flex items-center justify-center p-20 w-full rounded-xl overflow-hidden bg-[url('https://images.unsplash.com/photo-1771520719118-9a6fc6e04574?q=80&w=987&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')] bg-cover bg-center saturate-100 dark:saturate-0 min-h-[70vh]! ">
+                    <div className="relative flex items-center justify-center p-4 lg:p-20 w-full rounded-xl overflow-hidden bg-[url('https://images.unsplash.com/photo-1771520719118-9a6fc6e04574?q=80&w=987&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')] bg-cover bg-center saturate-100 dark:saturate-10 min-h-[40vh]! lg:min-h-[70vh]! ">
+
                         <div className="absolute inset-0 bg-black/20" />
-                        <GlassCard className="max-w-sm" intensity="low">
+
+                        <GlassCard className="max-w-sm p-4 lg:p-6" intensity="low">
                             <h3 className="text-white text-xl font-bold italic underline decoration-white/30 decoration-2 underline-offset-4">Frosted Glass</h3>
                             <p className="text-white/80 text-sm mt-3 leading-relaxed">
                                 Beautifully blurred backgrounds that maintain context while providing focus.
@@ -357,8 +360,8 @@ export function ComponentPreview({ name, className }: ComponentPreviewProps) {
                 )
             case "glitch-text":
                 return (
-                    <div className="flex items-center justify-center p-20 w-full bg-black ">
-                        <GlitchText text="TikTok" className="text-lg lg:text-8xl font-black text-white " />
+                    <div className="flex items-center justify-center p-6 lg:p-20 w-full bg-black ">
+                        <GlitchText text="TikTok" className="text-6xl lg:text-8xl font-black text-white " />
                     </div>
                 )
             case "shimmer-button":
@@ -369,7 +372,7 @@ export function ComponentPreview({ name, className }: ComponentPreviewProps) {
                 )
             case "number-ticker":
                 return (
-                    <div className="flex flex-col items-center justify-center p-20 w-full">
+                    <div className="flex flex-col items-center justify-center px-4 py-20 lg:p-20 w-full">
                         <div className="text-7xl tracking-tighter">
                             <NumberTicker value={2500} />
                             <span className="text-primary">+</span>
@@ -379,13 +382,13 @@ export function ComponentPreview({ name, className }: ComponentPreviewProps) {
                 )
             case "copy-input":
                 return (
-                    <div className="flex items-center justify-center p-20 w-full">
+                    <div className="flex items-center justify-center px-4 py-12 lg:p-20 w-full">
                         <CopyInput value="Your_Secret_Key-sk-orix-1234567890" label="API Key" />
                     </div>
                 )
             case "status-badge":
                 return (
-                    <div className="flex flex-wrap items-center justify-center gap-4 p-20 w-full">
+                    <div className="flex flex-wrap items-center justify-center gap-6 px-4 py-12 lg:p-20 w-full">
                         <StatusBadge variant="success">System Online</StatusBadge>
                         <StatusBadge variant="warning">Maintenance Mode</StatusBadge>
                         <StatusBadge variant="error">Critical Failure</StatusBadge>
@@ -395,7 +398,7 @@ export function ComponentPreview({ name, className }: ComponentPreviewProps) {
                 )
             case "pricing-section":
                 return (
-                    <div className="w-full scale-90 origin-top">
+                    <div className="w-full origin-top">
                         <PricingSection />
                     </div>
                 )
@@ -413,7 +416,7 @@ export function ComponentPreview({ name, className }: ComponentPreviewProps) {
                 )
             case "skeleton":
                 return (
-                    <div className="flex flex-col gap-8 p-20 w-full max-w-md">
+                    <div className="flex flex-col gap-8 px-4 py-20 lg:p-20 w-full max-w-md">
                         <div className="flex items-center space-x-4">
                             <Skeleton className="h-12 w-12 rounded-full" />
                             <div className="space-y-2">
@@ -491,7 +494,7 @@ export function ComponentPreview({ name, className }: ComponentPreviewProps) {
                 )
             case "input":
                 return (
-                    <div className="flex flex-col gap-6 p-10 w-full max-w-md">
+                    <div className="flex flex-col gap-6 p-6 lg:p-10 w-full max-w-md">
                         <div className="space-y-2">
                             <label className="text-sm text-muted-foreground">Default Input</label>
                             <Input placeholder="Enter your full name..." />
@@ -508,23 +511,24 @@ export function ComponentPreview({ name, className }: ComponentPreviewProps) {
                 )
             case "dialog":
                 return (
-                    <div className="flex flex-wrap items-center justify-center gap-4 p-20 w-full">
+                    <div className="flex flex-wrap items-center justify-center gap-4 p-4 lg:p-20 w-full">
                         {[
                             { id: "default", label: "Standard Pop", icon: "solar:maximize-bold-duotone" },
                             { id: "expand", label: "Spring Expand", icon: "lineicons:expand-square-4" },
-                            { id: "slide-up", label: "Fluid Slide", icon: "solar:arrow-up-circle-bold-duotone" },
+                            { id: "slide-up", label: "Fluid Slide", icon: "fluent:slide-text-20-regular" },
                             { id: "drawer-right", label: "Side Sheet", icon: "solar:sidebar-minimalistic-bold-duotone" },
                             { id: "drawer-bottom", label: "Mobile Drawer", icon: "solar:smartphone-bold-duotone" }
                         ].map((variant) => (
                             <Dialog key={variant.id}>
                                 <DialogTrigger asChild>
-                                    <Button variant="outline" className="rounded-2xl px-6 h-12">
-                                        <Icon icon={variant.icon} className="size-5 mr-2" />
+                                    <Button variant="outline" className="">
+                                        <Icon icon={variant.icon} className="size-3" />
                                         {variant.label}
                                     </Button>
                                 </DialogTrigger>
                                 <DialogContent variant={variant.id as any} className={cn(
-                                    variant.id.includes('drawer') && "max-w-md sm:max-w-md "
+                                    variant.id.includes('drawer') ? "max-w-full sm:max-w-md " : "max-w-[95%] sm:max-w-lg ",
+                                    "flex flex-col items-center justify-center "
                                 )}>
                                     <DialogHeader>
                                         <DialogTitle>{variant.label} Mode</DialogTitle>
@@ -532,14 +536,17 @@ export function ComponentPreview({ name, className }: ComponentPreviewProps) {
                                             Experience the high-fidelity {variant.id} transition. Managed with pure Tailwind CSS.
                                         </DialogDescription>
                                     </DialogHeader>
-                                    <div className="grid gap-6 py-4">
+                                    <div className="grid gap-6 py-4 w-full">
                                         <div className="space-y-2">
                                             <label className="text-sm text-muted-foreground">Email Address</label>
-                                            <Input placeholder="name@example.com" />
+                                            <Input placeholder="name@example.com" autoFocus={false} />
                                         </div>
                                     </div>
-                                    <DialogFooter>
-                                        <Button type="submit" className="w-full h-12 rounded-xl">Confirm Selection</Button>
+                                    <DialogFooter className=" w-full flex flex-row justify-center gap-2">
+                                        <DialogClose asChild className="w-[40%] ">
+                                            <Button variant="outline"> Cancel </Button>
+                                        </DialogClose>
+                                        <Button type="submit" className="flex-1">Confirm Selection</Button>
                                     </DialogFooter>
                                 </DialogContent>
                             </Dialog>
@@ -548,14 +555,14 @@ export function ComponentPreview({ name, className }: ComponentPreviewProps) {
                 )
             case "radial-gauge":
                 return (
-                    <div className="flex items-center justify-center gap-12 p-20 w-full">
+                    <div className="flex flex-wrap items-center justify-center gap-12 px-4 py-16 lg:p-20 w-full">
                         <RadialGauge value={75} label="Server Load" color="#3b82f6" strokeWidth={14} />
                         <RadialGauge value={92} label="GPU Usage" color="#ef4444" size={160} />
                     </div>
                 )
             case "expandable-dock":
                 return (
-                    <div className="flex flex-wrap items-center justify-center gap-24 p-20 pb-10 w-full">
+                    <div className="flex flex-wrap items-center justify-center gap-24 p-10 lg:p-20 pb-10 w-full overflow-x-auto">
                         <ExpandableDock
                             items={[
                                 { title: "Home", icon: "solar:home-2-bold-duotone", href: "#" },
@@ -601,7 +608,7 @@ export function ComponentPreview({ name, className }: ComponentPreviewProps) {
                 )
             case "interactive-stack":
                 return (
-                    <div className="flex items-center justify-center p-20 w-full">
+                    <div className="flex items-center justify-center px-4 py-12 lg:p-20 w-full">
                         <InteractiveStack
                             items={[
                                 { title: "Architecture", description: "Strategic design for scalable infrastructure.", color: "#3b82f6", icon: <Icon icon="solar:structure-bold-duotone" /> },
@@ -636,15 +643,15 @@ export function ComponentPreview({ name, className }: ComponentPreviewProps) {
                 )
             case "interactive-lines":
                 return (
-                    <div className="flex flex-col gap-8 w-full">
-                        <InteractiveLines variant="grid" />
-                        <InteractiveLines variant="beams" color="rgb(236, 72, 153)" />
-                        <InteractiveLines variant="dots" color="rgb(168, 85, 247)" />
+                    <div className="flex flex-col gap-8 w-full px-2 py-6">
+                        <InteractiveLines variant="grid" className="tracking-tighter uppercase font-black italic h-100" />
+                        <InteractiveLines variant="beams" color="rgb(236, 72, 153)" className="tracking-tighter uppercase font-black h-100" />
+                        <InteractiveLines variant="dots" color="rgb(168, 85, 247)" className="tracking-tighter uppercase italic h-100" />
                     </div>
                 )
             case "liquid-aura":
                 return (
-                    <div className="flex flex-col gap-8 w-full text-zinc-900 dark:text-white">
+                    <div className="flex flex-col gap-8 w-full px-4 py-12">
                         <LiquidAura variant="aurora" />
                         <LiquidAura variant="nebula" />
                         <LiquidAura variant="magma" />
@@ -652,34 +659,34 @@ export function ComponentPreview({ name, className }: ComponentPreviewProps) {
                 )
             case "particle-vortex":
                 return (
-                    <div className="flex flex-col gap-8 w-full">
-                        <ParticleVortex variant="gravity" count={120} />
-                        <ParticleVortex variant="repel" />
-                        <ParticleVortex variant="drift" />
+                    <div className="flex flex-col gap-8 w-full px-4 py-6">
+                        <ParticleVortex variant="gravity" count={120} className="h-100" />
+                        <ParticleVortex variant="repel" count={200} className="h-100" />
+                        <ParticleVortex variant="drift" className="h-100" />
                     </div>
                 )
             case "magnetic-surface":
                 return (
-                    <div className="flex flex-col gap-8 w-full">
-                        <MagneticSurface variant="arrows" />
+                    <div className="flex flex-col gap-8 w-full px-4 py-12">
+                        <MagneticSurface variant="arrows" className="h-100" />
                         <MagneticSurface variant="lines" gridSize={40} />
                         <MagneticSurface variant="crosses" gridSize={50} />
                     </div>
                 )
             case "noise-mesh":
                 return (
-                    <div className="flex flex-col gap-8 w-full text-zinc-950 dark:text-white">
-                        <NoiseMesh variant="fluid" />
-                        <NoiseMesh variant="topography" />
-                        <NoiseMesh variant="glitch" />
+                    <div className="flex flex-col gap-8 w-full text-zinc-950 dark:text-white px-2 py-6">
+                        <NoiseMesh variant="fluid" className="lg:h-100" />
+                        <NoiseMesh variant="topography" className="lg:h-100" />
+                        <NoiseMesh variant="glitch" className="lg:h-100" />
                     </div>
                 )
             case "floating-constellation":
                 return (
-                    <div className="flex flex-col gap-8 w-full">
-                        <FloatingConstellation variant="connected" />
-                        <FloatingConstellation variant="orbit" count={60} />
-                        <FloatingConstellation variant="dust" count={100} />
+                    <div className="flex flex-col gap-8 w-full px-4 py-8">
+                        <FloatingConstellation variant="connected" className="h-[200px] lg:h-100 " />
+                        <FloatingConstellation variant="orbit" count={60} className="h-[200px] lg:h-100 " />
+                        <FloatingConstellation variant="dust" count={100} className="h-[200px] lg:h-100 " />
                     </div>
                 )
             case "carousel":
@@ -707,12 +714,13 @@ export function ComponentPreview({ name, className }: ComponentPreviewProps) {
                     }
                 ]
                 return (
-                    <div className="flex flex-col gap-8 p-10 w-full">
+                    <div className="flex flex-col gap-8 px-4 py-16 lg:p-10 w-full">
                         <Carousel
                             items={carouselItems}
                             variant={selectedVariant}
                             orientation={selectedOrientation}
                             primaryColor={selectedColor}
+                            className="h-10"
                         />
 
                         <div className="w-full space-y-6 border-t pt-8">
@@ -786,11 +794,12 @@ export function ComponentPreview({ name, className }: ComponentPreviewProps) {
                     { label: "Settings", value: "settings", icon: <Icon icon="solar:settings-bold-duotone" /> }
                 ]
                 return (
-                    <div className="flex flex-col gap-20 p-12 w-full items-center">
+                    <div className="flex flex-col items-start gap-20 px-4 py-12 lg:p-12 w-full overflow-x-auto">
                         <div className="flex flex-col items-center gap-4">
                             <span className="text-[10px] text-muted-foreground uppercase tracking-[0.2em]">Pill Variant</span>
                             <Tabs tabs={TABS} variant="pills" />
                         </div>
+
                         <div className="flex flex-col items-center gap-4">
                             <span className="text-[10px] text-muted-foreground uppercase tracking-[0.2em]">Underline Variant</span>
                             <Tabs tabs={TABS} variant="underline" />
@@ -813,7 +822,7 @@ export function ComponentPreview({ name, className }: ComponentPreviewProps) {
                 return <FaqSection />
             case "tooltip":
                 return (
-                    <div className="flex flex-col items-center gap-16 p-20 w-full">
+                    <div className="flex flex-col items-center gap-16 px-4 py-12 lg:p-20 w-full">
                         <div className="flex flex-wrap items-center justify-center gap-10">
                             {(["top", "bottom", "left", "right"] as const).map((side) => (
                                 <Tooltip key={side} content={`Side: ${side}`} side={side} variant={selectedVariant || "dark"}>
@@ -825,23 +834,23 @@ export function ComponentPreview({ name, className }: ComponentPreviewProps) {
                         </div>
                         <div className="flex flex-wrap gap-3 justify-center">
                             {["dark", "light", "glass", "primary"].map((v) => (
-                                <button
+                                <Button
                                     key={v}
+                                    variant={selectedVariant === v ? "default" : "outline"}
                                     onClick={() => setSelectedVariant(v)}
-                                    className={cn(
-                                        "px-4 py-2 text-xs rounded-xl border transition-all capitalize",
-                                        selectedVariant === v ? "bg-primary text-primary-foreground border-primary" : "bg-muted hover:bg-muted/80"
-                                    )}
+                                // className={cn(
+                                //     selectedVariant === v ? "bg-primary text-primary-foreground border-primary" : "bg-muted hover:bg-muted/80"
+                                // )}
                                 >
                                     {v}
-                                </button>
+                                </Button>
                             ))}
                         </div>
                     </div>
                 )
             case "text-scramble":
                 return (
-                    <div className="flex flex-col items-center justify-center p-20 w-full bg-zinc-950 text-white rounded-xl">
+                    <div className="flex flex-col items-center justify-center px-4 py-20 lg:p-20 w-full bg-zinc-950 text-white rounded-xl">
                         <TextScramble text="ACCESS GRANTED" className="text-3xl tracking-widest text-[#10b981]" trigger={true} />
                         <p className="mt-4 text-xs text-zinc-500 max-w-[250px] text-center">
                             Hover over the text below to trigger manually:
@@ -851,7 +860,7 @@ export function ComponentPreview({ name, className }: ComponentPreviewProps) {
                 )
             case "loader":
                 return (
-                    <div className="flex flex-wrap items-center justify-evenly w-full min-h-76 gap-8 py-12">
+                    <div className="flex flex-wrap items-center justify-evenly w-full min-h-76 gap-16 px-4 py-12">
                         <Loader variant={"ring"} size="lg" />
                         <Loader variant={"dots"} size="lg" />
                         <Loader variant={"bars"} size="lg" />
@@ -865,10 +874,10 @@ export function ComponentPreview({ name, className }: ComponentPreviewProps) {
                 )
             case "border-beam":
                 return (
-                    <div className="flex flex-col items-center justify-center p-20 w-full dark:bg-black gap-16">
+                    <div className="flex flex-col items-center justify-center p-4 lg:p-20 w-full dark:bg-black gap-16">
                         <div className="relative  flex h-[300px] w-full max-w-[300px] flex-col items-center justify-center overflow-hidden rounded-5xl bg-white dark:bg-zinc-950 ">
 
-                            <span className="pointer-events-none whitespace-pre-wrap bg-linear-to-b from-black to-zinc-400/80 bg-clip-text text-center text-5xl font-semibold leading-none text-transparent dark:from-white dark:to-zinc-200/50">
+                            <span className="pointer-events-none whitespace-pre-wrap bg-linear-to-b from-black to-zinc-400/80 bg-clip-text text-center text-5xl font-black leading-none text-transparent dark:from-white dark:to-zinc-200/50">
                                 MAGIC
                             </span>
                             <BorderBeam size={200} duration={8} delay={0} colorFrom="#6366f1" colorTo="#fcd34d" variant={selectedVariant || "default"} />
@@ -894,8 +903,9 @@ export function ComponentPreview({ name, className }: ComponentPreviewProps) {
                 )
             case "flip-words":
                 return (
-                    <div className="flex items-center justify-center p-20 w-full">
-                        <h2 className="text-5xl font-black text-center leading-tight">
+                    <div className="flex items-center justify-center px-4 py-12 lg:p-20 w-full">
+
+                        <h2 className="text-3xl lg:text-5xl font-black text-center leading-tight">
                             Build <br />
                             <FlipWords words={["beautiful", "modern", "scalable", "lightning fast"]} className="text-primary italic px-0" /> <br />
                             interfaces with Orix
@@ -904,21 +914,23 @@ export function ComponentPreview({ name, className }: ComponentPreviewProps) {
                 )
             case "blur-fade":
                 return (
-                    <div className="flex flex-col items-center justify-center gap-6 p-20 w-full">
+                    <div className="flex flex-col items-center justify-center gap-6 p-4 lg:p-20 w-full">
                         <BlurFade delay={0} inView={true}>
-                            <h2 className="text-4xl font-bold tracking-tighter">Welcome to the future.</h2>
+                            <h2 className="text-4xl font-bold tracking-tighter text-center">Welcome to the future.</h2>
                         </BlurFade>
+
                         <BlurFade delay={0.2} inView={true}>
                             <p className="text-muted-foreground text-center">Seamlessly animate elements as they enter the viewport</p>
                         </BlurFade>
+
                         <BlurFade delay={0.4} inView={true}>
-                            <Button className="mt-4 rounded-xl px-8 h-12 shadow-xl shadow-primary/20">Get Started</Button>
+                            <Button className="mt-4 shadow-xl shadow-primary/20">Get Started</Button>
                         </BlurFade>
                     </div>
                 )
             case "progress-ring":
                 return (
-                    <div className="flex flex-col items-center gap-12 p-16 w-full">
+                    <div className="flex flex-col items-center gap-12 px-4 py-16 lg:p-16 w-full">
                         <div className="flex flex-wrap items-end justify-center gap-10">
                             <ProgressRing value={72} label="CPU" variant="glow" color="hsl(var(--primary))" size={140} strokeWidth={12} />
                             <ProgressRing value={48} label="Memory" variant="gradient" color="#ec4899" size={120} />
@@ -929,7 +941,7 @@ export function ComponentPreview({ name, className }: ComponentPreviewProps) {
                 )
             case "typewriter":
                 return (
-                    <div className="flex items-center justify-center p-20 w-full">
+                    <div className="flex items-center justify-center px-4 py-16 lgp-20 w-full">
                         <div className="text-center space-y-6">
                             <p className="text-xs uppercase tracking-widest text-muted-foreground">Orix is built for</p>
                             <h2 className="text-5xl font-black">

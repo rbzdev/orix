@@ -30,7 +30,7 @@ export function NoiseMesh({ className, variant = "fluid" }: NoiseMeshProps) {
         <div
             onMouseMove={handleMouseMove}
             className={cn(
-                "relative w-full h-[500px] overflow-hidden bg-zinc-50 dark:bg-zinc-950 flex items-center justify-center border rounded-3xl group transition-colors duration-500",
+                "relative w-full h-fit px-2 py-12 overflow-hidden bg-zinc-50 dark:bg-zinc-950 flex items-center justify-center border rounded-3xl group transition-colors duration-500",
                 className
             )}
         >
@@ -60,10 +60,12 @@ export function NoiseMesh({ className, variant = "fluid" }: NoiseMeshProps) {
             />
 
             <div className="relative z-20 text-center space-y-4">
+
                 <div className="inline-block px-3 py-1 rounded-full border border-primary/20 bg-primary/5 text-[10px] font-black tracking-widest uppercase text-primary mb-2">
                     Synthetic Perception
                 </div>
-                <h2 className="text-6xl font-black text-zinc-900 dark:text-white tracking-tighter italic">
+
+                <h2 className="text-xl lg:text-6xl font-bold tracking-tighter italic">
                     {variant.toUpperCase()}.CORE
                 </h2>
                 <p className="text-zinc-600 dark:text-zinc-400 font-medium max-w-sm mx-auto">

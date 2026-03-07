@@ -44,7 +44,7 @@ export function MagneticSurface({
             onMouseMove={handleMouseMove}
             onMouseLeave={() => { mouseX.set(-1000); mouseY.set(-1000) }}
             className={cn(
-                "relative w-full h-[500px] overflow-hidden bg-white dark:bg-zinc-950 flex items-center justify-center border rounded-3xl group transition-colors duration-500",
+                "relative w-full h-fit px-2 py-12 overflow-hidden bg-white dark:bg-zinc-950 flex items-center justify-center border rounded-3xl group transition-colors duration-500",
                 className
             )}
         >
@@ -68,8 +68,9 @@ export function MagneticSurface({
             </div>
 
             <div className="relative z-10 pointer-events-none text-center">
-                <div className="bg-white/80 dark:bg-zinc-900/80 backdrop-blur-xl p-10 rounded-[2.5rem] border border-black/5 dark:border-white/5 shadow-2xl">
-                    <h3 className="text-4xl font-black tracking-tighter italic text-zinc-900 dark:text-white">Magnetic Field.</h3>
+                <div className="bg-white/80 dark:bg-zinc-900/20 backdrop-blur-[2px] p-10 rounded-xl lg:rounded-[2.5rem] border border-black/5 dark:border-white/5 shadow-2xl">
+
+                    <h3 className="text-xl lg:text-4xl font-black tracking-tighter italic text-zinc-900 dark:text-white">Magnetic Field.</h3>
                     <p className="text-zinc-500 text-sm font-medium mt-2">Vector alignment simulation active.</p>
                 </div>
             </div>
@@ -103,7 +104,7 @@ function MagneticCell({ cell, mouseX, mouseY, gridSize, variant }: { cell: any; 
         <div className="flex items-center justify-center pointer-events-none" style={{ width: gridSize, height: gridSize }}>
             <motion.div
                 style={{ rotate, scale, opacity }}
-                className="text-zinc-400 dark:text-zinc-600 flex items-center justify-center transition-colors duration-300"
+                className="text-neutral-700 dark:text-zinc-400 flex items-center justify-center transition-colors duration-300"
             >
                 {variant === "arrows" && (
                     <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">

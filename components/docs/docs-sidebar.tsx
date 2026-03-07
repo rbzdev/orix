@@ -81,13 +81,13 @@ export function DocsSidebar({ nav }: DocsSidebarProps) {
             </aside>
 
             {/* Mobile: hamburger button in header area */}
-            <div className="md:hidden fixed top-16 left-0 z-50 flex items-center h-14 pl-4">
+            <div className="md:hidden fixed bottom-6 left-0 z-50 flex items-center h-14 pl-4">
                 <button
                     onClick={() => setMobileOpen(true)}
                     aria-label="Open navigation"
-                    className="flex h-9 w-9 items-center justify-center rounded-md border border-border/60 bg-background/90 shadow-sm backdrop-blur transition-colors hover:bg-muted"
+                    className="flex h-9 w-9 items-center justify-center rounded-md border border-border/60 bg-neutral-300 dark:bg-neutral-800 shadow-xsbackdrop-blur transition-colors hover:bg-muted"
                 >
-                    <Icon icon="solar:hamburger-menu-linear" className="text-xl" />
+                    <Icon icon="duo-icons:menu" className="text-xl" />
                 </button>
             </div>
 

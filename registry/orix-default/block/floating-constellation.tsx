@@ -44,7 +44,7 @@ export function FloatingConstellation({
         <div
             onMouseMove={handleMouseMove}
             className={cn(
-                "relative w-full h-[500px] overflow-hidden bg-white dark:bg-zinc-950 flex items-center justify-center border rounded-3xl group transition-colors duration-500",
+                "relative w-full h-fit overflow-hidden bg-white dark:bg-zinc-950 flex items-center justify-center border rounded-3xl group transition-colors duration-500",
                 className
             )}
         >
@@ -76,8 +76,8 @@ export function FloatingConstellation({
             />
 
             <div className="relative z-10 text-center">
-                <div className="p-12 space-y-4">
-                    <h2 className="text-5xl font-black text-zinc-900 dark:text-white tracking-tighter uppercase italic">
+                <div className="p-6 space-y-4">
+                    <h2 className="text-xl lg:text-5xl font-black text-zinc-900 dark:text-white tracking-tighter uppercase italic">
                         {variant}<span className="text-primary">.</span>node
                     </h2>
                     <p className="text-zinc-600 dark:text-zinc-400 font-mono text-xs tracking-[0.2em] uppercase">

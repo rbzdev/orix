@@ -23,14 +23,11 @@ export function Footer({ className }: FooterProps) {
                             Elevating the standard of open-source UI. Premium components and blocks designed for developers who care about the details.
                         </p>
                         <div className="flex items-center gap-4">
-                            <Link href="https://github.com/rbzdev" className="text-muted-foreground transition-colors hover:text-foreground">
-                                <Icon icon="line-md:github" className="text-xl" />
-                            </Link>
-                            <Link href="https://twitter.com" className="text-muted-foreground transition-colors hover:text-foreground">
+                            <Link href="https://x.com/rubuz_" className="text-muted-foreground transition-colors hover:text-foreground">
                                 <Icon icon="line-md:twitter" className="text-xl" />
                             </Link>
-                            <Link href="https://discord.com" className="text-muted-foreground transition-colors hover:text-foreground">
-                                <Icon icon="line-md:discord" className="text-xl" />
+                            <Link href="https://linkedin.com/in/rubuz/" className="text-muted-foreground transition-colors hover:text-foreground">
+                                <Icon icon="uit:linkedin-alt" className="text-xl" />
                             </Link>
                         </div>
                     </div>
@@ -49,7 +46,7 @@ export function Footer({ className }: FooterProps) {
                         <div className="flex flex-col gap-4">
                             <h4 className="text-sm font-bold uppercase tracking-widest text-foreground/80">Project</h4>
                             <nav className="flex flex-col gap-2 text-sm text-muted-foreground">
-                                <Link href="https://github.com/rbzdev" className="transition-colors hover:text-primary">GitHub</Link>
+                                <Link href="https://github.com/rbzdev/orix" target="_blank" className="transition-colors hover:text-primary">GitHub</Link>
                                 <Link href="#" className="transition-colors hover:text-primary">Contributing</Link>
                                 <Link href="#" className="transition-colors hover:text-primary">License</Link>
                                 <Link href="#" className="transition-colors hover:text-primary">Changelog</Link>
