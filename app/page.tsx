@@ -16,7 +16,7 @@ import { Button } from "@/components/ui/button"
 
 export default function Home() {
   return (
-    <div className="relative min-h-screen bg-background font-sans antialiased">
+    <div className="relative min-h-screen bg- antialiased">
       <Navbar />
 
       <main>

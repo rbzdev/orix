@@ -72,8 +72,8 @@ export function Navbar({
   return (
     <nav
       className={cn(
-        "fixed inset-x-0 top-0 z-50 transition-all duration-500 ease-in-out",
-        scrolled ? "top-4 px-4" : "top-0 px-0",
+        " inset-x-0 top-0 z-50 transition-all duration-500 ease-in-out ",
+        scrolled ? "top-4 px-4 sticky" : "absolute top-0 px-0 ",
         className
       )}
     >
@@ -82,7 +82,7 @@ export function Navbar({
           "mx-auto flex h-16 items-center justify-between transition-all duration-500 px-4 sm:px-6",
           scrolled
             ? "max-w-5xl rounded-2xl border border-white/10 bg-white/60 shadow-[0_8px_32px_rgba(0,0,0,0.12)] backdrop-blur-xl dark:bg-black/60 dark:shadow-[0_8px_32px_rgba(0,0,0,0.4)]"
-            : "max-w-7xl border-transparent bg-transparent"
+            : "max-w-7xl border-transparent"
         )}
       >
         {/* Logo Section */}

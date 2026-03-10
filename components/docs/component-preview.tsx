@@ -92,7 +92,7 @@ export function ComponentPreview({ name, className }: ComponentPreviewProps) {
         switch (name) {
             case "button":
                 return (
-                    <div className="flex flex-col items-center gap-8 lg:p-10 w-full">
+                    <div className="flex flex-col items-center gap-8 px-4 py-6 lg:p-10 w-full">
                         <div className="flex flex-wrap items-center justify-center gap-8">
                             <Button size={selectedSize}>
                                 {selectedSize === "icon" ? <Icon icon="solar:gallery-send-broken" /> : "Push Me"}
@@ -511,7 +511,7 @@ export function ComponentPreview({ name, className }: ComponentPreviewProps) {
                 )
             case "dialog":
                 return (
-                    <div className="flex flex-wrap items-center justify-center gap-4 p-4 lg:p-20 w-full">
+                    <div className="flex flex-wrap items-center justify-center gap-4 px-4 py-8 lg:p-20 w-full">
                         {[
                             { id: "default", label: "Standard Pop", icon: "solar:maximize-bold-duotone" },
                             { id: "expand", label: "Spring Expand", icon: "lineicons:expand-square-4" },

@@ -8,6 +8,10 @@ import { ThemeProvider } from "@/components/theme-provider";
 // Analytics
 import { GoogleAnalytics } from '@next/third-parties/google'
 
+
+// Blocks
+import DevHuntBanner from "@/components/block/devhunt-banner"
+
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
@@ -88,6 +92,8 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <head>
 
+        {/* <script defer data-url="https://devhunt.org/tool/orix-ui" src="https://cdn.jsdelivr.net/gh/sidiDev/devhunt-banner/indexV0.js" /> */}
+
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
@@ -95,7 +101,7 @@ export default function RootLayout({
 
       </head>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased `}
         suppressHydrationWarning
       >
         <ThemeProvider
@@ -104,6 +110,7 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
+          <DevHuntBanner />
           {children}
         </ThemeProvider>
       </body>
