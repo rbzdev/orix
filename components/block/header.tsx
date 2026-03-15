@@ -23,7 +23,6 @@ interface Header01Props {
 
 export function Header({
   badge = "Open-source • v1.0",
-  title = "Modern UI components for Tailwind CSS",
   description = "Build beautiful, accessible, and customizable user interfaces with our open-source components.",
   primaryAction = { label: "Explore Blocks", href: "/blocks" },
   secondaryAction = { label: "Documentation", href: "/docs" },
@@ -54,8 +53,8 @@ export function Header({
         </div>
 
         {/* Title */}
-        <h1 className="mb-6 bg-linear-to-b from-foreground to-foreground/70 bg-clip-text text-4xl font-bold tracking-tight text-transparent sm:text-5xl md:text-6xl lg:text-7xl">
-          {title}
+        <h1 className="mb-6 bg-linear-to-b from-foreground to-foreground/70 bg-clip-text text-4xl tracking-tight text-transparent sm:text-5xl md:text-6xl lg:text-7xl">
+          Modern <span className="corner-border corner-border-primary font-semibold px-1 text-primary inline-block"> UI components </span> for Tailwind CSS
         </h1>
 
         {/* Description */}
@@ -76,6 +75,7 @@ export function Header({
               Explore blocks
               <Icon icon={"guidance:left-arrow"} className="group-hover:translate-x-2 transition-all" />
             </Button>
+
 
           </Link>
           <Link

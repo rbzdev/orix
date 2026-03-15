@@ -104,7 +104,7 @@ export default function Home() {
           <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full bg-[radial-gradient(circle_at_center,rgba(var(--primary-rgb),0.03)_0%,transparent_70%)]" />
 
           <div className="max-w-4xl mx-auto text-center space-y-12 relative z-10">
-            <h2 className="text-5xl md:text-7xl font-black tracking-tighter leading-tight italic">
+            <h2 className="text-5xl md:text-7xl tracking-tighter leading-tight ">
               Ready to transform <br /> your UI?
             </h2>
             <div className="flex flex-wrap justify-center gap-6">
