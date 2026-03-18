@@ -10,7 +10,7 @@ import { GoogleAnalytics } from '@next/third-parties/google'
 
 
 // Blocks
-import DevHuntBanner from "@/components/block/devhunt-banner"
+// import DevHuntBanner from "@/components/block/devhunt-banner"
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -110,7 +110,7 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <DevHuntBanner />
+          {/* <DevHuntBanner /> */}
           {children}
         </ThemeProvider>
       </body>
