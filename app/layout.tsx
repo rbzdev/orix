@@ -23,6 +23,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
+
   metadataBase: new URL(process.env.NEXT_PUBLIC_APP_URL || 'https://orix-three.vercel.app'),
   title: "Orix - The Next-Gen Component Library",
   description: "A lightning-fast, highly customizable component Library built entirely on top of shadcn/ui.",
@@ -72,8 +73,16 @@ export const metadata: Metadata = {
     shortcut: "/icon.ico",
     apple: "/logo_min.png",
   },
+
+  // Google
+  verification: {
+    google: 'ELF7moF0SwHWQdXTCl5Dm8LXxpy_pFDTGL6CEZQwS_E',
+  },
 };
 
+
+// <meta name="google-site-verification" content="ELF7moF0SwHWQdXTCl5Dm8LXxpy_pFDTGL6CEZQwS_E" />
+// google-site-verification=tURyrErs_pdUpKl-gzAWWhMFCgM_dAG1dKOPz57ApFA
 
 export default function RootLayout({
   children,
