@@ -1017,5 +1017,35 @@ export default function Demo() {
       { name: "variant", type: "enum", values: ["ring", "dots", "bars", "pulse", "spinner", "orbit", "wave", "bounce", "dash"], default: "ring" },
       { name: "size", type: "enum", values: ["sm", "md", "lg"], default: "md" }
     ]
+  },
+
+  // ==========================================
+  // MAGIC SPELLS
+  // ==========================================
+  "magic-spells": {
+    usage: `import { MagicSpells } from "@/components/ui/magic-spells"
+
+export default function Demo() {
+  return (
+    <MagicSpells type="arcane" variant="warp" distortionStrength={50}>
+      <div className="p-12 bg-zinc-950 rounded-3xl border border-white/10 overflow-hidden">
+        <h2 className="text-4xl font-black italic text-white mb-4 uppercase">
+          Flux Distortion
+        </h2>
+        <p className="text-zinc-400 max-w-md">
+          Experience pixel-level space-time manipulation. This component wraps any content and distorts it dynamically based on cursor position.
+        </p>
+      </div>
+    </MagicSpells>
+  )
+}`,
+    props: [
+      { name: "type", type: "enum", values: ["arcane", "fire", "ice", "void", "nature", "holy"], default: "arcane" },
+      { name: "variant", type: "enum", values: ["warp", "glitch", "magnify", "dissolve", "vortex", "pixelate", "ripple"], default: "warp" },
+      { name: "distortionStrength", type: "number", default: "40" },
+      { name: "radius", type: "number", default: "300" },
+      { name: "particleDensity", type: "number", default: "1" },
+      { name: "showCursor", type: "boolean", default: "false" }
+    ]
   }
 }

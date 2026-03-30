@@ -766,6 +766,21 @@
                 }
             ],
             "dependencies": []
+        },
+        {
+            "name": "magic-spells",
+            "type": "registry:ui",
+            "title": "Magic Spells",
+            "description": "An interactive component that wraps elements with magical particle bursts and ritual aura animations.",
+            "files": [
+                {
+                    "path": "registry/orix-default/ui/magic-spells.tsx",
+                    "type": "registry:ui"
+                }
+            ],
+            "dependencies": [
+                "framer-motion"
+            ]
         }
     ]
 }

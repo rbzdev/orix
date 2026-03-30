@@ -4,6 +4,7 @@ import { getRegistryByType } from "@/lib/registry"
 import { Icon } from "@iconify/react"
 import Image from "next/image"
 import { DocsSidebar } from "@/components/docs/docs-sidebar"
+import { GlobalSearch } from "@/components/block/global-search"
 
 export default async function DocsLayout({
     children,
@@ -51,13 +52,17 @@ export default async function DocsLayout({
                             orix-UI
                         </Link>
 
-                        <nav className="flex items-center space-x-2 text-sm font-medium ">
-                            <Link href="/docs" className="transition-colors hover:text-primary text-foreground/60">
-                                <Icon icon="simple-icons:buymeacoffee" className="text-4xl bg-yellow-400 dark:bg-yellow-400 text-black rounded-full p-1" />
+                        <div className="flex items-center gap-4">
+                            <div className="hidden md:block">
+                                <GlobalSearch />
+                            </div>
 
-                            </Link>
+                            <nav className="flex items-center space-x-2 text-sm font-medium ">
+                                <Link href="/docs" className="transition-colors hover:text-primary text-foreground/60">
+                                    <Icon icon="simple-icons:buymeacoffee" className="text-4xl bg-yellow-400 dark:bg-yellow-400 text-black rounded-full p-1" />
+                                </Link>
 
-                            <Link href="https://github.com/rbzdev/orix" target="_blank" className="transition-colors hover:text-primary text-foreground/60 flex items-center lg:border rounded-sm p-1">
+                                <Link href="https://github.com/rbzdev/orix" target="_blank" className="transition-colors hover:text-primary text-foreground/60 flex items-center lg:border rounded-sm p-1">
                                 <Icon icon="line-md:github" className="text-xl hidden lg:block" />
 
 
@@ -70,11 +75,12 @@ export default async function DocsLayout({
                             </Link>
                         </nav>
                     </div>
-                    <div className="border p-1 rounded-sm flex items-center">
-                        <ThemeToggle />
-                    </div>
                 </div>
-            </header>
+                <div className="border p-1 rounded-sm flex items-center">
+                    <ThemeToggle />
+                </div>
+            </div>
+        </header>
 
             <div className="container flex-1 items-start md:grid md:grid-cols-[220px_minmax(0,1fr)] md:gap-6 lg:grid-cols-[240px_minmax(0,1fr)] lg:gap-10 max-w-screen-2xl px-8">
                 <DocsSidebar nav={sidebarNav} />

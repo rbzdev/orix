@@ -73,6 +73,7 @@ import { Tabs } from "@/registry/orix-default/ui/tabs"
 import { Tooltip } from "@/registry/orix-default/ui/tooltip"
 import { ProgressRing } from "@/registry/orix-default/ui/progress-ring"
 import { Typewriter } from "@/registry/orix-default/ui/typewriter"
+import { MagicSpells } from "@/registry/orix-default/ui/magic-spells"
 
 interface ComponentPreviewProps {
     name: string
@@ -870,6 +871,83 @@ export function ComponentPreview({ name, className }: ComponentPreviewProps) {
                         <Loader variant={"wave"} size="lg" />
                         <Loader variant={"bounce"} size="lg" />
                         <Loader variant={"dash"} size="lg" />
+                    </div>
+                )
+            case "magic-spells":
+                return (
+                    <div className="flex flex-col gap-10 w-full max-w-4xl mx-auto px-4 py-8">
+                        {/* Interactive Selection */}
+                        <div className="flex flex-wrap gap-2 justify-center bg-muted/30 p-2 rounded-2xl border border-white/5 backdrop-blur-md">
+                            {["warp", "glitch", "magnify", "dissolve", "vortex", "pixelate", "ripple"].map((v) => (
+                                <button
+                                    key={v}
+                                    onClick={() => setSelectedVariant(v)}
+                                    className={cn(
+                                        "px-6 py-2 text-xs font-bold rounded-xl transition-all uppercase tracking-[0.2em]",
+                                        selectedVariant === v
+                                            ? "bg-primary text-primary-foreground shadow-lg shadow-primary/20 scale-105"
+                                            : "bg-transparent text-muted-foreground hover:bg-white/5"
+                                    )}
+                                >
+                                    {v}
+                                </button>
+                            ))}
+                        </div>
+
+                        {/* Preview Container */}
+                        <div className="border rounded-3xl overflow-hidden bg-zinc-50 dark:bg-zinc-950 shadow-2xl relative">
+                            {/* Theme Indicator */}
+                            <div className="absolute top-4 right-4 z-50 flex items-center gap-2 px-3 py-1 bg-muted/50 rounded-full border border-white/5 backdrop-blur-md pointer-events-none">
+                                <div className="size-2 rounded-full bg-primary animate-pulse" />
+                                <span className="text-[10px] font-mono text-muted-foreground uppercase">Adaptive.OS</span>
+                            </div>
+
+                            <MagicSpells
+                                type={selectedVariant === "glitch" ? "void" : selectedVariant === "magnify" ? "ice" : "arcane"}
+                                variant={selectedVariant || "warp"}
+                                distortionStrength={60}
+                                radius={250}
+                                particleDensity={1.5}
+                                className="min-h-[600px] flex items-center justify-center"
+                            >
+                                <div className="p-12 w-full max-w-2xl space-y-16">
+                                    <div className="space-y-6 text-center">
+                                        <h2 className="text-7xl font-black tracking-tighter uppercase italic leading-none transition-colors">
+                                            {selectedVariant === "glitch" ? "SYSTEM_FAILURE" : "Beyond Reality"}
+                                        </h2>
+                                        <p className="text-muted-foreground text-lg font-medium leading-relaxed max-w-lg mx-auto">
+                                            A sophisticated {selectedVariant} field that adapts to light and dark environments. Every pixel within the ritual circle is redefined by arcane mathematics.
+                                        </p>
+                                    </div>
+
+                                    <div className="grid grid-cols-2 gap-4">
+                                        <div className="aspect-square rounded-3xl bg-primary/10 border border-primary/20 flex flex-col items-center justify-center gap-4 group">
+                                            <div className="size-16 rounded-2xl bg-primary flex items-center justify-center shadow-2xl shadow-primary/40 group-hover:rotate-12 transition-transform">
+                                                <Icon icon="solar:magic-stick-3-bold-duotone" className="size-10 text-white" />
+                                            </div>
+                                            <span className="text-[10px] font-black uppercase tracking-widest text-primary">Spellcaster</span>
+                                        </div>
+                                        <div className="aspect-square rounded-3xl overflow-hidden border border-white/10">
+                                            <img
+                                                src="https://images.unsplash.com/photo-1620641788421-7a1c342ea42e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80"
+                                                alt="Abstraction"
+                                                className="w-full h-full object-cover"
+                                            />
+                                        </div>
+                                    </div>
+
+                                    <div className="flex justify-center gap-4">
+                                        <Button className="rounded-full px-12 py-6 text-lg font-black italic uppercase tracking-tighter">
+                                            Execute {selectedVariant}
+                                        </Button>
+                                    </div>
+                                </div>
+                            </MagicSpells>
+                        </div>
+
+                        <p className="text-center text-[10px] text-muted-foreground uppercase tracking-[0.4em] mb-4">
+                            Experimental Flux Engine v1.1
+                        </p>
                     </div>
                 )
             case "border-beam":

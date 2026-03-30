@@ -10,6 +10,7 @@ import { ThemeToggle } from "@/components/theme-toggle"
 import { Button } from "@/components/ui/button"
 import { cn } from "@/lib/utils"
 import Image from "next/image";
+import { GlobalSearch } from "@/components/block/global-search"
 
 interface NavItem {
   label: string
@@ -92,7 +93,7 @@ export function Navbar({
         </Link>
 
         {/* Desktop Navigation */}
-        <div className="hidden absolute left-1/2 -translate-x-1/2 items-center gap-1 md:flex">
+        <div className="hidden absolute left-1/2 -translate-x-1/2 items-center gap-1 lg:flex">
           {items.map((item) => (
             <Link
               key={item.href}
@@ -107,9 +108,13 @@ export function Navbar({
 
         {/* Right Actions */}
         <div className="flex items-center gap-2 relative z-50">
+          <div className="hidden md:flex mr-4">
+             <GlobalSearch isScrolled={scrolled} />
+          </div>
+          
           <div className="hidden items-center gap-1 sm:flex mr-2">
             <Link
-              href="https://github.com/rbzdev"
+              href="https://github.com/rbzdev/orix"
               target="_blank"
               className="group flex h-9 w-9 items-center justify-center rounded-lg transition-all hover:bg-zinc-100 dark:hover:bg-zinc-800"
             >
@@ -121,14 +126,13 @@ export function Navbar({
           </div>
 
           <Link href="/docs">
-
             <Button
               variant="default"
               size="sm"
               className="hidden sm:inline-flex rounded-full px-5 font-semibold shadow-indigo-500/20"
             >
               Get Started
-              <Icon icon="guidance:left-arrow" className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+              <Icon icon="guidance:left-arrow" className="h-4 w-4 transition-transform group-hover:translate-x-1 rotate-180" />
             </Button>
           </Link>
 
