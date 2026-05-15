@@ -74,6 +74,7 @@ import { Tooltip } from "@/registry/orix-default/ui/tooltip"
 import { ProgressRing } from "@/registry/orix-default/ui/progress-ring"
 import { Typewriter } from "@/registry/orix-default/ui/typewriter"
 import { MagicSpells } from "@/registry/orix-default/ui/magic-spells"
+import { Globe } from "@/registry/orix-default/ui/cobe-globe"
 
 interface ComponentPreviewProps {
     name: string
@@ -1030,6 +1031,34 @@ export function ComponentPreview({ name, className }: ComponentPreviewProps) {
                                     pauseDuration={2000}
                                 />
                             </h2>
+                        </div>
+                    </div>
+                )
+            case "cobe-globe":
+                return (
+                    <div className="flex flex-col items-center gap-8 px-4 py-12 lg:p-12 w-full">
+                        <div className="w-full max-w-md">
+                            <Globe
+                                markers={[
+                                    { id: "cairo", location: [30.0444, 31.2357], label: "Le Caire" },
+                                    { id: "abidjan", location: [5.3600, -4.0083], label: "Abidjan" },
+                                    { id: "kinshasa", location: [-4.4419, 15.2663], label: "Kinshasa" },
+                                    { id: "lubumbashi", location: [-11.6609, 27.4794], label: "Lubumbashi" },
+                                    { id: "douala", location: [4.0511, 9.7679], label: "Douala" },
+                                    { id: "portonovo", location: [6.4969, 2.6289], label: "Porto-Novo" },
+                                    { id: "paris", location: [48.8566, 2.3522], label: "Paris" }
+                                ]}
+                                arcs={[
+                                    { id: "cairo-abidjan", from: [30.0444, 31.2357], to: [5.3600, -4.0083], label: "Cairo → Abidjan" },
+                                    { id: "kinshasa-lubumbashi", from: [-4.4419, 15.2663], to: [-11.6609, 27.4794], label: "Kinshasa → Lubumbashi" },
+                                    { id: "douala-portonovo", from: [4.0511, 9.7679], to: [6.4969, 2.6289], label: "Douala → Porto-Novo" },
+                                    { id: "paris-cairo", from: [48.8566, 2.3522], to: [30.0444, 31.2357], label: "Paris → Cairo" }
+                                ]}
+                                className="w-full"
+                            />
+                        </div>
+                        <div className="text-zinc-500 text-[10px] font-mono tracking-widest uppercase">
+                            Pan-African Network - WebGL Visualization
                         </div>
                     </div>
                 )

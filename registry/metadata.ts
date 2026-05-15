@@ -1047,5 +1047,32 @@ export default function Demo() {
       { name: "particleDensity", type: "number", default: "1" },
       { name: "showCursor", type: "boolean", default: "false" }
     ]
+  },
+
+  // ==========================================
+  // COBE GLOBE
+  // ==========================================
+  "cobe-globe": {
+    usage: `import { Globe } from "@/registry/orix-default/ui/cobe-globe"
+
+export default function Demo() {
+  const markers = [
+    { id: "cairo", location: [30.0444, 31.2357], label: "Le Caire" },
+    { id: "abidjan", location: [5.3600, -4.0083], label: "Abidjan" },
+    { id: "kinshasa", location: [-4.4419, 15.2663], label: "Kinshasa" }
+  ]
+
+  return (
+    <div className="w-full max-w-lg aspect-square mx-auto">
+      <Globe markers={markers} />
+    </div>
+  )
+}`,
+    props: [
+      { name: "markers", type: "Marker[]" },
+      { name: "arcs", type: "Arc[]" },
+      { name: "speed", type: "number", default: "0.003" },
+      { name: "mapSamples", type: "number", default: "16000" }
+    ]
   }
 }

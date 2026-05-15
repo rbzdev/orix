@@ -781,6 +781,21 @@
             "dependencies": [
                 "framer-motion"
             ]
+        },
+        {
+            "name": "cobe-globe",
+            "type": "registry:ui",
+            "title": "Cobe Globe",
+            "description": "A lightweight WebGL globe library integration for React.",
+            "files": [
+                {
+                    "path": "registry/orix-default/ui/cobe-globe.tsx",
+                    "type": "registry:ui"
+                }
+            ],
+            "dependencies": [
+                "cobe"
+            ]
         }
     ]
 }
