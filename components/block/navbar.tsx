@@ -109,9 +109,9 @@ export function Navbar({
         {/* Right Actions */}
         <div className="flex items-center gap-2 relative z-50">
           <div className="hidden md:flex mr-4">
-             <GlobalSearch isScrolled={scrolled} />
+            <GlobalSearch isScrolled={scrolled} />
           </div>
-          
+
           <div className="hidden items-center gap-1 sm:flex mr-2">
             <Link
               href="https://github.com/rbzdev/orix"
@@ -132,7 +132,7 @@ export function Navbar({
               className="hidden sm:inline-flex rounded-full px-5 font-semibold shadow-indigo-500/20"
             >
               Get Started
-              <Icon icon="guidance:left-arrow" className="h-4 w-4 transition-transform group-hover:translate-x-1 rotate-180" />
+              <Icon icon="guidance:right-arrow" className="h-4 w-4 transition-transform group-hover:translate-x-1 rotate-180" />
             </Button>
           </Link>
 
